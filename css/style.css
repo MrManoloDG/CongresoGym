@@ -4,11 +4,10 @@
 
 .header{
     width: 100%;
-    opacity: 0.5;
+    opacity: 0.9;
     background-color: #000;
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
+    position: fixed;
+  z-index: 100;
 }
 
 
@@ -22,7 +21,12 @@ body {
   margin: 0px;
 }
 
-
+hr{
+  height: 2px;
+  width: 90%;
+  background-color: #FFFF;
+  color: #FFFF;
+}
 
 .footer {
   position: float;
