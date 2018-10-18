@@ -2,7 +2,8 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <link href="css/style.css" rel="stylesheet">
   </head>
@@ -24,7 +25,6 @@
             <div class="card textoInicioLeft">
                 <div class="card-body text-center">
                   <h3> Titulo de la noticias</h3>
-                  <i class="fas fa-comments fa-5x card-title"></i>
                   <p class="text-left card-text">LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                   <hr class"BarraSeparadora" />
                   <p class="text-left card-text">LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -51,10 +51,10 @@
           </div>
         </div>
       </div>
-      <div style="background-color: #FFFF;">
+      <section class="container-fluid" style="background-color: #FFFF; padding-top: 40px; padding-bottom:40px">
         <div class="row">
-          <div class="col-xs-12 col-md-8">
-            <div class="card textoInicioLeft">
+          <div class="col-md-9" style=" margin:auto;">
+            <div class="card">
                 <div class="card-body text-center">
                   <h3> Titulo de la noticias</h3>
                   <i class="fas fa-comments fa-5x card-title"></i>
@@ -65,8 +65,8 @@
                 </div>
             </div>
           </div>
-          <div class="col-xs-12 col-md-4">
-            <div class="card textoInicioRight">
+          <div class="col-xs-12 col-md-3">
+            <div class="card">
                 <div class="card-body text-center">
                   <h3> Noticias</h3>
                   <hr class"BarraSeparadora" />
@@ -83,7 +83,101 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section class="container-fluid" style="background-color: #f8f9fa; padding-top: 40px; padding-bottom:40px">
+        <h2 id="btn-galeria">Nuestros Ponentes</h2>
+        <h3>Una gran variedad de ponentes de todos los ambito del mundo fitnes</h3>
+        <hr class"BarraSeparadora" />
+        <div class="container-fluid row mt-4" style=" margin:auto; padding:60px;">
+            <div class="col-md-4" id="ponente1">
+              <div class="card ">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">Noticias</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4" id="ponente2">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">Noticias</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4" id="ponente3">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">Noticias</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="d-none col-md-4" id="ponente4">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">aaaaaaaa</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="d-none col-md-4" id="ponente5">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">aaaaaa</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="d-none col-md-4" id="ponente6">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">aaaa</a></p>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="container-fluid" style="background-color: #FFFF; padding-top: 40px; padding-bottom:40px">
+        <h2>Contacta con nosotros</h2>
+        <hr class"BarraSeparadora" />
+        <div class="row">
+          <div class="col-md-7 pt-4 ">
+            <div>
+              <h5>Nuestro Correo:        manolo.diazgil@alum.uca.es</h5>
+              <h5>Nuestro Telefono:      607129378</h5>
+              <h5>Nuestra Dirección:     callefalsa123</52>
+            </div>
+          </div>
+          <div class="row col-md-5 pt-4">
+            <div class="col-md-4">
+              <div class="card ">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">Noticias</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">Noticias</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                  <div class="card-body text-center">
+                    <h3> Noticias</h3>
+                    <p class="card-text text-center"><a href="">Noticias</a></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!--/.container-->
     <footer class="footer">
@@ -92,4 +186,23 @@
       </div>
     </footer>
   </body>
+  <script type="text/javascript">
+  $('#btn-galeria').click(function(){
+    $('#ponente1').addClass("d-none");
+    $('#ponente2').addClass("d-none");
+    $('#ponente3').addClass("d-none");
+    $('#ponente4').removeClass("d-none");
+    $('#ponente5').removeClass("d-none");
+    $('#ponente6').removeClass("d-none");
+  });
+  $('#btn-f').click(function(){
+    $('#ponente4').addClass("d-none");
+    $('#ponente5').addClass("d-none");
+    $('#ponente6').addClass("d-none");
+    $('#ponente1').removeClass("d-none");
+    $('#ponente2').removeClass("d-none");
+    $('#ponente3').removeClass("d-none");
+  });
+
+  </script>
 </html>

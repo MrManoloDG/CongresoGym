@@ -1,5 +1,5 @@
 #main{
-padding: 80px;
+padding: 85px;
 }
 
 .header{
@@ -20,12 +20,13 @@ html {
 body {
   background-image: url('../img/fondo.jpg');
   margin: 0px;
+  text-align: center !important;
 }
 
 hr{
   height: 2px;
   width: 90%;
-  background-color: #FFFF;
+  background-color: #ef4035;
   color: #FFFF;
 }
 
