@@ -2,12 +2,14 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
       <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header" style="color:#FFFF">
+    <header class="header">
       <div >
               <ul>
                   <li class="menuLeft"><a>Lugar</a></li>
@@ -19,9 +21,25 @@
     </header>
     <main>
       <div class="container-fluid" id="main">
+          <div>
+            <div class="card textoInicio">
+                <div class="card-body text-center">
+                  <h3> Titulo de la noticias</h3>
+                  <p class="text-left card-text">LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <hr class"BarraSeparadora" />
+                  <p class="text-left card-text">LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <p class="card-text text-center"><a href="">Ir a noticisa</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="container-fluid" style="background-color: #FFFF; padding-top: 40px; padding-bottom:40px">
+        <h2 >Noticias</h2>
+        <hr class"BarraSeparadora" />
         <div class="row">
-          <div class="col-xs-12 col-md-8">
-            <div class="card textoInicioLeft">
+          <div class="col-md-9" style=" margin:auto;">
+            <div class="card">
                 <div class="card-body text-center">
                   <h3> Titulo de la noticias</h3>
                   <i class="fas fa-comments fa-5x card-title"></i>
@@ -32,9 +50,10 @@
                 </div>
             </div>
           </div>
-          <div class="col-xs-12 col-md-4">
-            <div class="card textoInicioRight">
+          <div class="col-xs-12 col-md-3">
+            <div class="card">
                 <div class="card-body text-center">
+                  <h3> Noticias</h3>
                   <hr class"BarraSeparadora" />
                   <p class="text-left card-text">LLorem Ipsum is ndustry. Lorem Ipsum Lorem Ipsum has been the industry's standard ages, and more
                     has been the industry's standard ages, and moreLorem Ipsum has been the industry's standard ages, and more.</p>
@@ -49,9 +68,121 @@
             </div>
           </div>
         </div>
-      </div>
-      <div style="height:400px; background-color: #FFFF;">
-      </div>
+      </section>
+      <section class="container-fluid" style="background-color: #f8f9fa; padding-top: 40px; padding-bottom:40px">
+        <h2 >Nuestros Ponentes</h2>
+        <h3 >Una gran variedad de ponentes de todos los ambito del mundo fitnes</h3>
+        <hr class"BarraSeparadora" />
+        <div class="container-fluid row mt-4" style=" margin:auto; padding:60px;">
+            <div class="d-none col-md-4" id="ponente1">
+              <div class="card ponentes" style="background-image: url('img/david.png'); background-size: 300px; -webkit-filter: grayscale(20%);  filter: grayscale(20%);">
+                  <div class="card-body text-center titulo px-0">
+                    <h3 class="tituloPonente"> David Laid</h3>
+                  </div>
+                  <div class="d-none card-body text-center redesSociales px-0">
+                    <div class="row">
+                      <div class="col-md-4" align="right"><ion-icon class="redesIcons" name="logo-youtube"></ion-icon></ion-icon></div>
+                      <div class=" col-md-4" align="center"><ion-icon class="redesIcons" name="logo-twitter"></ion-icon></ion-icon></div>
+                      <div class=" col-md-4" align="left"><ion-icon class="redesIcons" name="logo-facebook"></ion-icon></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class=" d-none  col-md-4" id="ponente2">
+              <div class="card ponentes" style="background-image: url('img/calum.png'); background-size: 300px; -webkit-filter: grayscale(20%);  filter: grayscale(20%);">
+                  <div class="card-body text-center titulo px-0">
+                    <h3 class="tituloPonente"> David Laid</h3>
+                  </div>
+                  <div class="d-none card-body text-center redesSociales px-0">
+                    <div class="row">
+                      <div class="col-md-4" align="right"><ion-icon class="redesIcons" name="logo-youtube"></ion-icon></ion-icon></div>
+                      <div class=" col-md-4" align="center"><ion-icon class="redesIcons" name="logo-twitter"></ion-icon></ion-icon></div>
+                      <div class=" col-md-4" align="left"><ion-icon class="redesIcons" name="logo-facebook"></ion-icon></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="d-none  col-md-4" id="ponente3">
+              <div class="card ponentes" style="background-image: url('img/nikki.png'); background-size: 300px; -webkit-filter: grayscale(20%);  filter: grayscale(20%);">
+                <div class="card-body text-center titulo px-0">
+                  <h3 class="tituloPonente"> Nikki</h3>
+                </div>
+                <div class="d-none card-body text-center redesSociales px-0">
+                  <div class="row">
+                    <div class="col-md-4" align="right"><ion-icon class="redesIcons" name="logo-youtube"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="center"><ion-icon class="redesIcons" name="logo-twitter"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="left"><ion-icon class="redesIcons" name="logo-facebook"></ion-icon></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none col-md-4" id="ponente4">
+              <div class="card ponentes" style="background-image: url('img/connor.png'); background-size: 300px; -webkit-filter: grayscale(20%);  filter: grayscale(20%);">
+                <div class="card-body text-center titulo px-0">
+                  <h3 class="tituloPonente"> Connor Murphy</h3>
+                </div>
+                <div class="d-none card-body text-center redesSociales px-0">
+                  <div class="row">
+                    <div class="col-md-4" align="right"><ion-icon class="redesIcons" name="logo-youtube"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="center"><ion-icon class="redesIcons" name="logo-twitter"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="left"><ion-icon class="redesIcons" name="logo-facebook"></ion-icon></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none col-md-4" id="ponente5">
+              <div class="card ponentes" style="background-image: url('img/jeff.png'); background-size: 300px; -webkit-filter: grayscale(20%);  filter: grayscale(20%);">
+                <div class="card-body text-center titulo px-0">
+                  <h3 class="tituloPonente"> Jeff Seid</h3>
+                </div>
+                <div class="d-none card-body text-center redesSociales px-0">
+                  <div class="row">
+                    <div class="col-md-4" align="right"><ion-icon class="redesIcons" name="logo-youtube"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="center"><ion-icon class="redesIcons" name="logo-twitter"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="left"><ion-icon class="redesIcons" name="logo-facebook"></ion-icon></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none col-md-4" id="ponente6">
+              <div class="card ponentes" style="background-image: url('img/whitney.png'); background-size: 300px; -webkit-filter: grayscale(20%);  filter: grayscale(20%);">
+                <div class="card-body text-center px-0 titulo">
+                  <h3 class="tituloPonente"> Whitney</h3>
+                </div>
+                <div class="d-none card-body text-center redesSociales px-0">
+                  <div class="row">
+                    <div class="col-md-4" align="right"><ion-icon class="redesIcons" name="logo-youtube"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="center"><ion-icon class="redesIcons" name="logo-twitter"></ion-icon></ion-icon></div>
+                    <div class=" col-md-4" align="left"><ion-icon class="redesIcons" name="logo-facebook"></ion-icon></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container-fluid row" style=" margin:auto; padding-left:8em; padding-right:8em;">
+          <div class="col-md-6" align="right" id="btn-derecha"><ion-icon name="arrow-round-back"></ion-icon></div>
+          <div class=" col-md-6" align="left" id="btn-izquierda"><ion-icon name="arrow-round-forward"></ion-icon></div>
+
+        </div>
+      </section>
+      <section class="container-fluid" style="background-color: #FFFF; padding-top: 40px; padding-bottom:40px">
+        <h2>Contacta con nosotros</h2>
+        <hr class"BarraSeparadora" />
+        <div class="row">
+          <div class="col-md-7 pt-4 ">
+            <div>
+              <h5>Nuestro Correo:        manolo.diazgil@alum.uca.es</h5>
+              <h5>Nuestro Telefono:      607129378</h5>
+              <h5>Nuestra Dirección:     callefalsa123</52>
+            </div>
+          </div>
+          <div class="row col-md-5 pt-4">
+            <div class="col-md-4" align="left"><ion-icon class="footerIcon"  name="logo-youtube"></ion-icon></ion-icon></div>
+            <div class=" col-md-4" align="left"><ion-icon class="footerIcon" name="logo-twitter"></ion-icon></ion-icon></div>
+            <div class=" col-md-4" align="left"><ion-icon  class="footerIcon" name="logo-facebook" ></ion-icon></div>
+          </div>
+        </div>
+      </section>
     </main>
     <!--/.container-->
     <footer class="footer">
@@ -60,4 +191,89 @@
       </div>
     </footer>
   </body>
+  <script type="text/javascript">
+
+
+  var array = [1,2,3];
+  $('#ponente'+array[0]).removeClass("d-none");
+  $('#ponente'+array[1]).removeClass("d-none");
+  $('#ponente'+array[2]).removeClass("d-none");
+
+  $('#reservar').hover(function(){
+          $(this).val("Logueate");
+      }, function() {
+          $(this).val("Reservar");
+      });
+  $('div.ponentes').hover(function(){
+        $(this).find(".redesSociales").removeClass("d-none");
+        $(this).find(".titulo").addClass("d-none");
+    }, function() {
+        $(this).find(".redesSociales").addClass("d-none");
+        $(this).find(".titulo").removeClass("d-none");
+    });
+
+  $('#btn-derecha').click(function(){
+  //  arrayAux = array;
+    $('#ponente'+array[0]).addClass("d-none");
+    $('#ponente'+array[1]).addClass("d-none");
+    $('#ponente'+array[2]).addClass("d-none");
+
+    $.each(array, function (index, value) {
+      if(array[index] == 6) array[index] =1;
+      else array[index]++;
+    });
+      //console.log(arrayAux);
+      console.log(array);
+
+
+      $('#ponente'+array[0]).removeClass("d-none");
+      $('#ponente'+array[1]).removeClass("d-none");
+      $('#ponente'+array[2]).removeClass("d-none");
+
+  });
+  $('#btn-izquierda').click(function(){
+  //  arrayAux = array;
+    $('#ponente'+array[0]).addClass("d-none");
+    $('#ponente'+array[1]).addClass("d-none");
+    $('#ponente'+array[2]).addClass("d-none");
+
+    $.each(array, function (index, value) {
+      if(array[index] == 1) array[index] =6;
+      else array[index]--;
+    });
+      //console.log(arrayAux);
+      console.log(array);
+
+
+      $('#ponente'+array[0]).removeClass("d-none");
+      $('#ponente'+array[1]).removeClass("d-none");
+      $('#ponente'+array[2]).removeClass("d-none");
+
+  });
+/*
+
+  $('#btn-galeria').click(function(){
+    $('#ponente1').toggle("slow");
+    $('#ponente2').toggle("slow");
+    $('#ponente3').toggle("slow");
+    $('#ponente1').addClass("d-none");
+    $('#ponente2').addClass("d-none");
+    $('#ponente3').addClass("d-none");
+    $('#ponente4').removeClass("d-none");
+    $('#ponente5').removeClass("d-none");
+    $('#ponente6').removeClass("d-none");
+  });
+  $('#btn-f').click(function(){
+    $('#ponente4').toggle("slow");
+    $('#ponente5').toggle("slow");
+    $('#ponente6').toggle("slow");
+    //$('#ponente4').addClass("d-none");
+    //$('#ponente5').addClass("d-none");
+   // $('#ponente6').addClass("d-none");
+    $('#ponente1').removeClass("d-none");
+    $('#ponente2').removeClass("d-none");
+    $('#ponente3').removeClass("d-none");
+  });
+*/
+  </script>
 </html>
