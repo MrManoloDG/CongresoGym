@@ -4,11 +4,10 @@ padding: 85px;
 
 .header{
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.8;
     background-color: #000;
     position: fixed;
     z-index: 100;
-    color: #FFFF;
 }
 
 h2{
@@ -16,6 +15,16 @@ h2{
   text-transform: uppercase !important;
   font-size: 3rem;
 }
+header a,header a:link {
+	color: #FFFF;
+	text-decoration: none;
+	text-size: 2em;
+}
+
+header li {
+	vertical-align: inherit;
+}
+
 
 html {
   position: relative;
@@ -59,8 +68,8 @@ hr{
 
 .textoInicioLeft {
   margin: auto;
-  top: 5%;
-  display: block;
+  top: 25%;
+
   opacity: 0.8;
   position: float;
   background-color: #000;
@@ -78,6 +87,18 @@ hr{
   width: 80%;
   color:#FFFF
 }
+
+.contenido{
+	margin: auto;
+    opacity: 0.8;
+    background-color: #000;
+    color:#FFFF;
+	border-radius: 10px;
+	text-align: center;
+}
+
+
+
 
 .ponentes {
   height:300px;
@@ -133,14 +154,25 @@ ul {
 
 .menuLeft{
     float: left;
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
 }
 
 .menuRight{
     float: right;
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
 }
 
 li a {
     display: block;
     text-align: center;
     padding: 14px 16px;
+}
+
+.tinytext {
+	font-size: 0.8em;
+	font-style: italic;
 }
