@@ -176,3 +176,16 @@ li a {
 	font-size: 0.8em;
 	font-style: italic;
 }
+
+#pills-tabContent article:hover{
+  background-color: #ef4035;
+}
+
+.nav-pills a{
+  color: #ef4035;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #ef4035;
+}
