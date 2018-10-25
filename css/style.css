@@ -1,14 +1,21 @@
 #main{
-padding: 85px;
+padding-top:130px;
+padding-bottom: 98px;
 }
 
 .header{
     width: 100%;
-    opacity: 0.8;
-    background-color: #000;
     position: fixed;
     z-index: 100;
 }
+
+.headerA{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: #000;
+}
+
 
 h2{
   font-weight: 900;
@@ -55,14 +62,26 @@ hr{
   color:#FFFF
 }
 
-.textoInicio {
+.textoInscripcion {
   margin: auto;
-  top: 5%;
+  top: 10%;
   display: block;
   opacity: 0.8;
   position: float;
   background-color: #000;
-  width: 38%;
+  width: 50%;
+  color:#FFFF
+}
+
+
+.textoInicio {
+  margin: auto;
+  top: 10%;
+  display: block;
+  opacity: 0.8;
+  position: float;
+  background-color: #000;
+  width: 30%;
   color:#FFFF
 }
 
