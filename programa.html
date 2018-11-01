@@ -2,11 +2,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
 	<link href="css/style.css" rel="stylesheet">
+
+	<script src="js/programa.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -19,70 +23,174 @@
 		    <div class="collapse navbar-collapse" id="navbarText">
 		      <ul class="navbar-nav ml-auto">
 		        <li class="nav-item active">
-		          <a class="nav-link" href="#">Programa <span class="sr-only">(current)</span></a>
+		          <a class="nav-link" href="#">Programa<span class="sr-only">(current)</span></a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="#">Localización</a>
+		          <a class="nav-link" href="localizacion.html">Localización</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="#">Inscripción</a>
+		          <a class="nav-link" href="inscripcion.html">Inscripción</a>
 		        </li>
 		      </ul>
 		    </div>
 	  </nav>
   </header>
   <main>
-	<div class="container-fluid" id="main">
+	<div class="container-fluid" id="main-programacion">
 	  <div class="row">
 		<article class="col-xs-12 col-md-11 mx-auto mt-1 contenido p-3">
-			<h2>Conferencia</h2>
-			<p>Lorem Ipsum es simplemente un texto de relleno de la industria de impresión y tipografía. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde la década de 1500, cuando una impresora desconocida tomó una galera de tipos y la revolvió para hacer un libro de muestras tipo. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contenían pasajes de Lorem Ipsum y, más recientemente, con un software de edición de escritorio como Aldus PageMaker, incluidas las versiones de Lorem Ipsum.</p>
+			<img id="imagen" class="img-thumbnail" width="260" src="img/david.png" alt="Imagen Conferenciante"><br>
+			<h2 id="titulo">Conferencia</h2><br>
+			<span class="tinytext" id="horario">(9:00 a 11:00)</span>
+			<p id="articulo">Lorem Ipsum es simplemente un texto de relleno de la industria de impresión y tipografía. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde la década de 1500, cuando una impresora desconocida tomó una galera de tipos y la revolvió para hacer un libro de muestras tipo. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contenían pasajes de Lorem Ipsum y, más recientemente, con un software de edición de escritorio como Aldus PageMaker, incluidas las versiones de Lorem Ipsum.</p>
+
+
 		</article>
 	  </div>
 	</div>
+	<section class="container-fluid" class="container-fluid" style="background-color: #FFFF;">
 	<div style="background-color: #FFFF;">
 		<div class="row p-3">
 			<div class="col-xs-12 col-md-3 p-2 mx-auto">
 				<ul class="nav nav-pills">
 				  <li class="nav-item mx-auto">
-				    <a class="nav-link active" href="#">dia 1</a>
+				    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Dia 1</a>
 				  </li>
 				  <li class="nav-item mx-auto">
-				    <a class="nav-link" href="#">dia 2</a>
+				    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Dia 2</a>
 				  </li>
 				  <li class="nav-item mx-auto">
-				    <a class="nav-link" href="#">dia 3</a>
+				    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Dia 3</a>
 				  </li>
 				</ul>
 			</div>
 		</div>
+		<div class="tab-content" id="pills-tabContent">
+			<!-- Dia 1 -->
+		  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				<div class="row p-3 text-center">
+			  		<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+						<img  class="d-none" src="img/david.png" alt="imagen">
+			  			<h3>Vida saludable</h3>
+			  			<span class="tinytext">(9:00 a 11:00)</span>
+			  			<p class="preview">Llevar una vida saludable está estrechamente relacionado con una forma de vida que incluya la práctica habitual de actividad física acompañada de una alimentación saludable.</p>
+							<p class="descripcion d-none">
+								Llevar una vida saludable está estrechamente relacionado con una forma de vida que incluya
+								la práctica habitual de actividad física acompañada de una alimentación saludable.
+								<br>
+								Una dieta equilibrada y el deporte son eficaces para ralentizar
+								los problemas de salud cuando ambos forman parte habitual de tu rutina. El consumo adecuado
+								de nutrientes como las vitaminas, los minerales y las proteínas es esencial para el funcionamiento
+								normal del organismo.
+								<br>
+								El conferenciante X hablara sobre como llevar una vida saludable haciendono saber que alimentos debemos ingerir.
+							</p>
+			  		</article>
 
-		<div class="row p-3 text-center">
-	  		<article class="col-xs-12 col-md-3 p-3">
-	  			<h2>Conferencia</h2>
-	  			<span class="tinytext">(9:00 a 10:00)</span>
-	  			<p>scasdvsdvsdvsdvsdvse vsevsevsevsdsevs   dvsevsdvesvd</p>
-	  		</article>
+			  		<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+						<img  class="d-none" src="img/calum.png" alt="imagen">
+			  			<h3>HIIT</h3>
+			  			<span class="tinytext">(11:30 a 13:30)</span>
+			  			<p class="preview">Respondamos, por fin, a la pregunta que se hacen muchas personas en todo el mundo: Que es, cuales son sus beneficios, y como aplicarlo en nuestro entrenamiento</p>
+							<p class="descripcion d-none">
 
-	  		<article class="col-xs-12 col-md-3 p-3">
-	  			<h2>Conferencia</h2>
-	  			<span class="tinytext">(9:00 a 10:00)</span>
-	  			<p>scasdvsdvsdvsdvsdvs evsevsevsevsdsevsd vsevsdvesvd</p>
-	  		</article>
+								HIIT: entrenamiento de intervalos de alta intensidad – una técnica que se ha ganado a pulso su nombre como el método de
+								entrenamiento más efectivo del mercado. Es rápido, intenso y permite quemar calorías como ningún otro entrenamiento,
+								pero, ¿qué es lo que tiene este método de entrenamiento para que sea tan efectivo? Si todavía no estás muy seguro sobre
+								qué es un workout HIIT y qué procesos activan la quema de calorías en el cuerpo, estás a punto de descubrirlo. Respondamos,
+								por fin, a la pregunta que se hacen muchas personas en todo el mundo: ¿qué es HIIT?
 
-	  		<article class="col-xs-12 col-md-3 p-3">
-	  			<h2>Conferencia</h2>
-	  			<span class="tinytext">(9:00 a 10:00)</span>
-	  			<p>scasdvsdvsdvsdvsdv sevsevsevsevsdsevsdvse vsdvesvd</p>
-	  		</article>
+							</p>
+						</article>
 
-	  		<article class="col-xs-12 col-md-3 p-3">
-	  			<h2>Conferencia</h2>
-	  			<span class="tinytext">(9:00 a 10:00)</span>
-	  			<p>scasdvsdvsdvsdvsdvse vsevsevsevsdsev sdvsevsdvesvd</p>
-	  		</article>
-  	  </div>
+			  		<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+						<img  class="d-none" src="img/connor.png" alt="imagen">
+			  			<h3>Hipertrofia como estilo de vida</h3>
+			  			<span class="tinytext">(16:00 a 18:00)</span>
+			  			<p class="preview">Entrenar hipertrofia tiene como objetivo aumentar la masa muscular del cuerpo. Tenemos que tener en cuenta que la clave para conseguir este objetivo depende de la combinación del entrenamiento, la nutrición y el descanso.</p>
+							<p class="descripcion d-none">La hipertrofia muscular es el nombre científico dado al fenómeno de crecimiento en el tamaño de las células musculares, lo cual supone un aumento de tamaño de las fibras musculares y por lo tanto del músculo.
+								 Técnicamente es el crecimiento de las células musculares sin que exista una división celular, el músculo sometido a este cambio ofrece por igual una mejor respuesta a la carga.
+								 <br>
+								 La hipertrofia muscular es el nombre científico dado al fenómeno de crecimiento en el tamaño de las células musculares, lo cual supone un aumento de tamaño de las fibras musculares y por lo tanto del músculo. Técnicamente es el crecimiento
+								 de las células musculares sin que exista una división celular, el músculo sometido a este cambio ofrece por igual una mejor respuesta a la carga.
+							 </p>
+						</article>
+
+			  		<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+						<img  class="d-none" src="img/jeff.png" alt="imagen">
+			  			<h3>Entrenamiento Oclusivo</h3>
+			  			<span class="tinytext">(18:15 a 19:30)</span>
+			  			<p class="preview">Entrenamiento Oclusivo, qué es, para qué sirve y cómo te ayuda en el gimnasio</p>
+							<p class="descripcion d-none">El entrenamiento oclusivo o entrenamiento en oclusión es un método de entrenamiento no tan habitual pero que puede suponer
+								una ventaja evidente de cara a la mejora de la composición corporal de ciertas personas, especialmente aquellas que no son capaces de tolerar altos
+								niveles de intensidad como los ancianos.
+								El entrenamiento en oclusión restringe el flujo de sangre de manera parcial para reducir principalmente el retorno venoso, es decir, la vuelta de la sangre desde los músculos en este caso hasta el ventrículo derecho del corazón.
+								<br>
+								Dado que las arterias tienen un mayor diámetro que las venas, son capaces de seguir transportando sangre hasta los tejidos que la demandan, pero sin embargo las venas son incapaces de
+								devolver toda esa sangre desoxigenada hasta el corazón, y lo que ocurre entonces es que sentimos una congestión muy alta.
+							</p>
+			  		</article>
+		  	  </div>
+			</div>
+			<!-- Dia 2 -->
+		  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+				<div class="row p-3 text-center">
+						<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+							<h3>Conferencia</h3>
+							<span class="tinytext">(9:00 a 10:00)</span>
+							<p class="preview">scasdvsdvsdvsdvsdvse vsevsevsevsdsevs   dvsevsdvesvd</p>
+						</article>
+
+						<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+							<h3>Conferencia</h3>
+							<span class="tinytext">(9:00 a 10:00)</span>
+							<p class="preview">scasdvsdvsdvsdvsdv sevsevsevsevsdsevsdvse vsdvesvd</p>
+						</article>
+
+						<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+							<h3>Conferencia</h3>
+							<span class="tinytext">(9:00 a 10:00)</span>
+							<p class="preview">scasdvsdvsdvsdvsdvse vsevsevsevsdsev sdvsevsdvesvd</p>
+						</article>
+					</div>
+			</div>
+			<!-- Dia 3 -->
+		  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+				<div class="row p-3 text-center">
+						<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+							<h3>Conferencia</h3>
+							<span class="tinytext">(9:00 a 10:00)</span>
+							<p class="preview">scasdvsdvsdvsdvsdvse vsevsevsevsdsevs   dvsevsdvesvd</p>
+						</article>
+
+						<article class="col-xs-12 col-md-3 p-3 mx-auto prog">
+							<h3>Conferencia</h3>
+							<span class="tinytext">(9:00 a 10:00)</span>
+							<p class="preview">scasdvsdvsdvsdvsdvse vsevsevsevsdsev sdvsevsdvesvd</p>
+						</article>
+					</div>
+			</div>
+		</div>
 	</div>
+	</section>
+	<section class="container-fluid" style="background-color: #FFFF; padding-top: 40px; padding-bottom:40px">
+		<h2>Contacta con nosotros</h2>
+		<hr class"BarraSeparadora" />
+		<div class="row">
+			<div class="col-md-7 pt-4 ">
+				<div>
+					<h5>Nuestro Correo:        manolo.diazgil@alum.uca.es</h5>
+					<h5>Nuestro Telefono:      607129378</h5>
+					<h5>Nuestra Dirección:     callefalsa123</52>
+				</div>
+			</div>
+			<div class="row col-md-5 pt-4">
+				<div class="col-md-4" align="left"><ion-icon class="footerIcon"  name="logo-youtube"></ion-icon></ion-icon></div>
+				<div class=" col-md-4" align="left"><ion-icon class="footerIcon" name="logo-twitter"></ion-icon></ion-icon></div>
+				<div class=" col-md-4" align="left"><ion-icon  class="footerIcon" name="logo-facebook" ></ion-icon></div>
+			</div>
+		</div>
+	</section>
   </main>
   <!--/.container-->
   <footer class="footer">

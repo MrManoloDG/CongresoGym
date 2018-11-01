@@ -2,12 +2,20 @@
 padding: 85px;
 }
 
+#main-programacion {
+	padding: 90px 90px 40px 90px
+}
+
+.bg-blanco {
+	background-color: #FFF;
+}
+
 .header{
     width: 100%;
     opacity: 0.8;
     background-color: #000;
     position: fixed;
-    z-index: 100;
+    z-index: 200;
 }
 
 h2{
@@ -175,4 +183,30 @@ li a {
 .tinytext {
 	font-size: 0.8em;
 	font-style: italic;
+}
+
+#pills-tabContent article:hover{
+  background-color: #ef4035;
+}
+
+.nav-pills a{
+  color: #ef4035;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #ef4035;
+}
+
+#mapid {
+		height: 400px;
+		width: 400px;
+		z-index: 100;
+}
+@media only screen and (max-width: 600px) {
+	#mapid {
+			height: 250px;
+			width: 250px;
+			z-index: 100;
+	}
 }

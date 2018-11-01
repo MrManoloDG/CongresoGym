@@ -1,0 +1,117 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+	<link href="css/style.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="recursos/leaflet/leaflet.css" />
+	<script src="recursos/leaflet/leaflet.js"></script>
+
+
+</head>
+<body>
+  <header class="header">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+		    <a class="navbar-brand" href="#"><img  height="50px" src="img/logo.png" alt="">Congreso Gimnasia</a>
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarText">
+		      <ul class="navbar-nav ml-auto">
+		        <li class="nav-item">
+		          <a class="nav-link" href="programa.html">Programa</a>
+		        </li>
+		        <li class="nav-item active">
+		          <a class="nav-link" href="#">Localización<span class="sr-only">(current)</span></a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="inscripcion.html">Inscripción</a>
+		        </li>
+		      </ul>
+		    </div>
+	  </nav>
+  </header>
+  <main>
+	<div class="container-fluid bg-blanco" id="main">
+	  <div class="row">
+		<section class="col-xs-12 col-md-6  p-3">
+			<h3>Localización</h3>
+			<div id="mapid" class="mx-auto"></div>
+			<p> <strong>Av Argentina, 10, 11519 Puerto Real, Cádiz</strong> </p>
+		</section>
+		<section class="col-xs-12 col-md-6  p-3">
+			<h3>Trasporte y Alojamiento</h3><br>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<h4>Alojamiento</h4>
+					<p>El hotel mas cercano, calidad precio es el
+						<a href="https://www.booking.com/hotel/es/caballo-negro.es.html">
+							<strong>Hotel Caballo Negro.</strong>
+						</a>
+						<br>
+						Una opción que es muy viable es alquilar un piso o una casa.
+						Se encuentran varias opciones en paginas como
+						<a href="https://airbnb.com"> <strong>airbnb</strong></a>,
+						<a href="https://booking"><strong>booking</strong></a>,
+						<a href="https://www.tripadvisor.es/"><strong>tripadvisor</strong></a>.
+					</p>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<img src="img/hotel.jpg" alt="Imagen hotel" height="200px">
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-xs-12 col-md-12 p-4">
+					<h4>Transporte</h4>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<i class="fas fa-train fa-3x"></i>
+					<p>Para llegar en tren, debe de bajarse en la estacion las aletas y caminar durante 5 mins.</p>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<i class="fas fa-bus fa-3x"></i>
+					<p>Para llegar en bus, debe de tomar la lines de buses que lo lleve al campus. Desde Puerto Real Lineas M-30, M-31.</p>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<i class="fas fa-parking fa-3x"></i>
+					<p>Para llegar en coche, en la entrada se dispone de aparcamiento, usando tambien el aparcamiento de la Universidad.</p>
+				</div>
+			</div>
+		</section>
+	  </div>
+	</div>
+	<section class="container-fluid" class="container-fluid" style="background-color: #FFFF;">
+	<div style="background-color: #FFFF;">
+
+	</div>
+	</section>
+  </main>
+  <!--/.container-->
+  <footer class="footer">
+	<div>
+	  CONGRESO
+	</div>
+  </footer>
+</body>
+</html>
+<script type="text/javascript">
+	var mymap = L.map('mapid').setView([36.528616, -6.211104], 15);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+			attribution: '',
+			maxZoom: 18,
+			id: 'mapbox.streets',
+			accessToken: 'pk.eyJ1IjoibXJtYW5vbG8iLCJhIjoiY2prbTd2a2M0MjFmczNrbzZ4dW1sZXN3eCJ9.WoHPuE6qIhh1lf3JyH5X_w'
+	}).addTo(mymap);
+	var marker = L.marker([36.528616, -6.211104]).addTo(mymap);
+	marker.bindPopup("<b>Complejo Deportivo Universidad de Cadiz</b><br>Aquí se situa el Congreso<br>"+
+	"<a href='https://www.google.com/maps/place/Complejo+Deportivo/@36.52865,-6.2119299,18z/data=!4m5!3m4!1s0xd0dcddc00bacbcb:0x2c9500fa5e5dfdb6!8m2!3d36.5285648!4d-6.2110949' target=”_blank”>"+
+	"	Ver en Google Maps" +
+	"</a>").openPopup();
+</script>
