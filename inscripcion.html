@@ -9,7 +9,7 @@
       <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header" id="header">
+    <header class="header" id="header2">
   		<nav class="navbar navbar-expand-lg navbar-dark">
   		    <a class="navbar-brand" href="#" ><img  class="pl-5 pr-3" height="50px" src="img/logo.png" alt="">Congreso Gimnasia</a>
   		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,26 +38,59 @@
                   <h2> Inscripcion</h2>
                   <hr class"BarraSeparadora" />
                   <div>
-                    <form action="/my-handling-form-page" method="post">
-                      <div class="p-0 pt-2 m-0 row col-md-12">
+                    <div class="container-fluid row " style=" margin:auto; padding:60px;">
+                        <div class="col-md-4">
+                          <div class="card" style="color:#000;">
+                            <div class="card-body text-center">
+                              <h2> Free plan</h2>
+                              <h3> 0$</h3>
+                              <hr class"BarraSeparadora" />
+                              <p class="text-left card-text">LLoremd dnturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was  of Lorem Ipsum.</p>
+                              <p class="card-text text-center"><a href=""> Adquirir</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="card" style="color:#000;">
+                            <div class="card-body text-center">
+                              <h2> Free plan</h2>
+                              <h3> 0$</h3>
+                              <hr class"BarraSeparadora" />
+                              <p class="text-left card-text">LLoremd dnturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was  of Lorem Ipsum.</p>
+                              <p class="card-text text-center"><a href=""> Adquirir</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="card" style="color:#000;">
+                            <div class="card-body text-center">
+                              <h2> Free plan</h2>
+                              <h3> 0$</h3>
+                              <hr class"BarraSeparadora" />
+                              <p class="text-left card-text">LLoremd dnturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was  of Lorem Ipsum.</p>
+                              <p class="card-text text-center"><a href=""> Adquirir</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <form class="" action="" method="post" style=" margin:auto; padding-left:60px; padding-right:60px;">
+                      <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4" ><label for="name">Name:</label></div>
-                          <div class="p-0 col-md-8"><input type="text" id="name" name="user_name"style="width:100%;"></input></div>
+                          <div class="p-0 pr-4 col-md-8"><input type="text" id="name" name="user_name"style="width:100%;"></input></div>
                       </div>
-                      <div class="p-0 pt-2 m-0 row col-md-12">
+                      <div class="p-0 pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4"><label for="mail">E-mail:</label></div>
-                          <div class="p-0 col-md-8"><input type="email" id="mail" name="user_email" style="width:100%;"></input></div>
+                          <div class="p-0 pr-4 col-md-8"><input type="email" id="mail" name="user_email" style="width:100%;"></input></div>
                       </div>
-                      <div class="p-0  pt-2 m-0 row col-md-12">
+                      <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4" ><label for="msg">Message:</label></div>
-                          <div class="p-0 col-md-8"><textarea id="msg" name="user_message" style="width:100%;"></textarea></div>
+                          <div class="p-0  pr-4 col-md-8"><textarea id="msg" name="user_message" style="width:100%;"></textarea></div>
                       </div>
 
                       <div class="button">
                           <button type="submit">Send your message</button>
                       </div>
                   </form>
-                <div>
-                </div>
             </div>
           </div>
         </div>
@@ -78,24 +111,6 @@
   $('#ponente'+array[1]).removeClass("d-none");
   $('#ponente'+array[2]).removeClass("d-none");
 
-
-  function headerScroll(){
-    var posicionDeCambio = $('.navbar').height() * 2;
-    if($(window).scrollTop() > posicionDeCambio){
-        $('#header').addClass("headerA");
-        $('#header').removeClass("header");
-    }else{
-        $('#header').addClass("header");
-        $('#header').removeClass("headerA");
-
-    }
-  }
-
-  $( window ).scroll(function() {
-    $(window).on("Cargar cada vez que se haga scroll", function(){
-        headerScroll();
-    });
-  });
 
   $('#reservar').hover(function(){
           $(this).val("Logueate");
