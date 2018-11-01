@@ -3,7 +3,11 @@ padding: 85px;
 }
 
 #main-programacion {
-	padding: 90px 90px 40px 90px 
+	padding: 90px 90px 40px 90px
+}
+
+.bg-blanco {
+	background-color: #FFF;
 }
 
 .header{
@@ -192,4 +196,9 @@ li a {
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #ef4035;
+}
+
+#mapid {
+		height: 400px;
+		width: 400px;
 }
