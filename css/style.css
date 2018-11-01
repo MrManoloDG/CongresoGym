@@ -11,6 +11,10 @@ padding-bottom: 98px;
 	background-color: #FFF;
 }
 
+.bg-negro {
+	background-color: #000;
+}
+
 .header{
     width: 100%;
     position: fixed;
