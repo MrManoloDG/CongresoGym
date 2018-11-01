@@ -15,7 +15,7 @@ padding: 85px;
     opacity: 0.8;
     background-color: #000;
     position: fixed;
-    z-index: 100;
+    z-index: 200;
 }
 
 h2{
@@ -201,4 +201,10 @@ li a {
 #mapid {
 		height: 400px;
 		width: 400px;
+}
+@media only screen and (max-width: 600px) {
+	#mapid {
+			height: 250px;
+			width: 250px;
+	}
 }
