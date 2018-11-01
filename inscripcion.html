@@ -1,0 +1,152 @@
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+      <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header" id="header">
+  		<nav class="navbar navbar-expand-lg navbar-dark">
+  		    <a class="navbar-brand" href="#" ><img  class="pl-5 pr-3" height="50px" src="img/logo.png" alt="">Congreso Gimnasia</a>
+  		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  		      <span class="navbar-toggler-icon"></span>
+  		    </button>
+  		    <div class="collapse navbar-collapse" id="navbarText">
+  		      <ul class="pr-5 navbar-nav ml-auto">
+  		        <li class="nav-item active">
+  		          <a class="nav-link" href="#">Programa <span class="sr-only">(current)</span></a>
+  		        </li>
+  		        <li class="nav-item">
+  		          <a class="nav-link" href="#">Localización</a>
+  		        </li>
+  		        <li class="nav-item">
+  		          <a class="nav-link" href="#">Inscripción</a>
+  		        </li>
+  		      </ul>
+  		    </div>
+  	  </nav>
+    </header>
+    <main>
+      <div class="container-fluid" id="main">
+          <div>
+            <div class="card textoInscripcion">
+                <div class="card-body text-center">
+                  <h2> Inscripcion</h2>
+                  <hr class"BarraSeparadora" />
+                  <div>
+                    <form action="/my-handling-form-page" method="post">
+                      <div class="p-0 pt-2 m-0 row col-md-12">
+                          <div class="col-md-4" ><label for="name">Name:</label></div>
+                          <div class="p-0 col-md-8"><input type="text" id="name" name="user_name"style="width:100%;"></input></div>
+                      </div>
+                      <div class="p-0 pt-2 m-0 row col-md-12">
+                          <div class="col-md-4"><label for="mail">E-mail:</label></div>
+                          <div class="p-0 col-md-8"><input type="email" id="mail" name="user_email" style="width:100%;"></input></div>
+                      </div>
+                      <div class="p-0  pt-2 m-0 row col-md-12">
+                          <div class="col-md-4" ><label for="msg">Message:</label></div>
+                          <div class="p-0 col-md-8"><textarea id="msg" name="user_message" style="width:100%;"></textarea></div>
+                      </div>
+
+                      <div class="button">
+                          <button type="submit">Send your message</button>
+                      </div>
+                  </form>
+                <div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--/.container-->
+    <footer class="footer">
+      <div>
+        CONGRESO
+      </div>
+    </footer>
+  </body>
+  <script type="text/javascript">
+
+
+  var array = [1,2,3];
+  $('#ponente'+array[0]).removeClass("d-none");
+  $('#ponente'+array[1]).removeClass("d-none");
+  $('#ponente'+array[2]).removeClass("d-none");
+
+
+  function headerScroll(){
+    var posicionDeCambio = $('.navbar').height() * 2;
+    if($(window).scrollTop() > posicionDeCambio){
+        $('#header').addClass("headerA");
+        $('#header').removeClass("header");
+    }else{
+        $('#header').addClass("header");
+        $('#header').removeClass("headerA");
+
+    }
+  }
+
+  $( window ).scroll(function() {
+    $(window).on("Cargar cada vez que se haga scroll", function(){
+        headerScroll();
+    });
+  });
+
+  $('#reservar').hover(function(){
+          $(this).val("Logueate");
+      }, function() {
+          $(this).val("Reservar");
+      });
+  $('div.ponentes').hover(function(){
+        $(this).find(".redesSociales").removeClass("d-none");
+        $(this).find(".titulo").addClass("d-none");
+    }, function() {
+        $(this).find(".redesSociales").addClass("d-none");
+        $(this).find(".titulo").removeClass("d-none");
+    });
+
+  $('#btn-derecha').click(function(){
+  //  arrayAux = array;
+    $('#ponente'+array[0]).addClass("d-none");
+    $('#ponente'+array[1]).addClass("d-none");
+    $('#ponente'+array[2]).addClass("d-none");
+
+    $.each(array, function (index, value) {
+      if(array[index] == 6) array[index] =1;
+      else array[index]++;
+    });
+      //console.log(arrayAux);
+      console.log(array);
+
+
+      $('#ponente'+array[0]).removeClass("d-none");
+      $('#ponente'+array[1]).removeClass("d-none");
+      $('#ponente'+array[2]).removeClass("d-none");
+
+  });
+  $('#btn-izquierda').click(function(){
+  //  arrayAux = array;
+    $('#ponente'+array[0]).addClass("d-none");
+    $('#ponente'+array[1]).addClass("d-none");
+    $('#ponente'+array[2]).addClass("d-none");
+
+    $.each(array, function (index, value) {
+      if(array[index] == 1) array[index] =6;
+      else array[index]--;
+    });
+      //console.log(arrayAux);
+      console.log(array);
+
+
+      $('#ponente'+array[0]).removeClass("d-none");
+      $('#ponente'+array[1]).removeClass("d-none");
+      $('#ponente'+array[2]).removeClass("d-none");
+
+  });
+  </script>
+</html>

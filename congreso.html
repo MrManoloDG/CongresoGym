@@ -9,26 +9,41 @@
       <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header">
-      <div >
-              <ul>
-                  <li class="menuLeft"><a>Lugar</a></li>
-                  <li class="menuRight"><a>Lugar</a></li>
-                  <li class="menuRight"><a>Lugar</a></li>
-                  <li class="menuRight"><a>Fotos</a></li>
-              </ul>
-      </div>
+    <header class="header" id="header">
+  		<nav class="navbar navbar-expand-lg navbar-dark">
+  		    <a class="navbar-brand" href="#" ><img  class="pl-5 pr-3" height="50px" src="img/logo.png" alt="">Congreso Gimnasia</a>
+  		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  		      <span class="navbar-toggler-icon"></span>
+  		    </button>
+  		    <div class="collapse navbar-collapse" id="navbarText">
+  		      <ul class="pr-5 navbar-nav ml-auto">
+  		        <li class="nav-item active">
+  		          <a class="nav-link" href="#">Programa <span class="sr-only">(current)</span></a>
+  		        </li>
+  		        <li class="nav-item">
+  		          <a class="nav-link" href="#">Localización</a>
+  		        </li>
+  		        <li class="nav-item">
+  		          <a class="nav-link" href="#">Inscripción</a>
+  		        </li>
+  		      </ul>
+  		    </div>
+  	  </nav>
     </header>
     <main>
       <div class="container-fluid" id="main">
           <div>
             <div class="card textoInicio">
                 <div class="card-body text-center">
-                  <h3> Titulo de la noticias</h3>
-                  <p class="text-left card-text">LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                  <h2> Fitness bahia de cadiz</h2>
                   <hr class"BarraSeparadora" />
-                  <p class="text-left card-text">LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <p class="card-text text-center"><a href="">Ir a noticisa</a></p>
+                  <h3 class=" card-text">Primer congreso fitness celebrado en la bahia de cadiz.</h3>
+                  <p class="card-text text-center"> Contaremos con la participacion de grandes celebridades desde el culturista
+                  Jeff Seid hasta la joven promesa del mundo del finess David Laid</p>
+                  <h3 class=" card-text">Patrocinado por NIKE</h3>
+                  <p class="pt-5"><img src="img/nike.png" style="max-width:100%;width:auto;height:auto;"></p>
+
+
                 </div>
             </div>
           </div>
@@ -199,6 +214,25 @@
   $('#ponente'+array[1]).removeClass("d-none");
   $('#ponente'+array[2]).removeClass("d-none");
 
+
+  function headerScroll(){
+    var posicionDeCambio = $('.navbar').height() * 2;
+    if($(window).scrollTop() > posicionDeCambio){
+        $('#header').addClass("headerA");
+        $('#header').removeClass("header");
+    }else{
+        $('#header').addClass("header");
+        $('#header').removeClass("headerA");
+
+    }
+  }
+
+  $( window ).scroll(function() {
+    $(window).on("Cargar cada vez que se haga scroll", function(){
+        headerScroll();
+    });
+  });
+
   $('#reservar').hover(function(){
           $(this).val("Logueate");
       }, function() {
@@ -250,30 +284,5 @@
       $('#ponente'+array[2]).removeClass("d-none");
 
   });
-/*
-
-  $('#btn-galeria').click(function(){
-    $('#ponente1').toggle("slow");
-    $('#ponente2').toggle("slow");
-    $('#ponente3').toggle("slow");
-    $('#ponente1').addClass("d-none");
-    $('#ponente2').addClass("d-none");
-    $('#ponente3').addClass("d-none");
-    $('#ponente4').removeClass("d-none");
-    $('#ponente5').removeClass("d-none");
-    $('#ponente6').removeClass("d-none");
-  });
-  $('#btn-f').click(function(){
-    $('#ponente4').toggle("slow");
-    $('#ponente5').toggle("slow");
-    $('#ponente6').toggle("slow");
-    //$('#ponente4').addClass("d-none");
-    //$('#ponente5').addClass("d-none");
-   // $('#ponente6').addClass("d-none");
-    $('#ponente1').removeClass("d-none");
-    $('#ponente2').removeClass("d-none");
-    $('#ponente3').removeClass("d-none");
-  });
-*/
   </script>
 </html>
