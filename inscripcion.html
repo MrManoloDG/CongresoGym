@@ -9,7 +9,7 @@
       <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header" id="header2">
+    <header class="bg-negro" id="header2">
   		<nav class="navbar navbar-expand-lg navbar-dark">
   		    <a class="navbar-brand" href="#" ><img  class="pl-5 pr-3" height="50px" src="img/logo.png" alt="">Congreso Gimnasia</a>
   		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,14 +31,14 @@
   	  </nav>
     </header>
     <main>
-      <div class="container-fluid" id="main">
+      <div class="container-fluid sectionIncripcion" id="mainInscripcion">
           <div>
             <div class="card textoInscripcion">
                 <div class="card-body text-center">
                   <h2> Inscripcion</h2>
                   <hr class"BarraSeparadora" />
                   <div>
-                    <div class="container-fluid row " style=" margin:auto; padding:60px;">
+                    <div class="container-fluid row " style=" margin:auto; padding:60px;" id="precios">
                         <div class="col-md-4">
                           <div class="card" style="color:#000;">
                             <div class="card-body text-center">
@@ -46,7 +46,7 @@
                               <h3> 0$</h3>
                               <hr class"BarraSeparadora" />
                               <p class="text-left card-text">LLoremd dnturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was  of Lorem Ipsum.</p>
-                              <p class="card-text text-center"><a href=""> Adquirir</a></p>
+                              <p class="card-text text-center"><a class="btn btnOrange inscripcion" href="javascript:void(0)"  data-id="1"> Adquirir</a></p>
                             </div>
                           </div>
                         </div>
@@ -57,7 +57,7 @@
                               <h3> 0$</h3>
                               <hr class"BarraSeparadora" />
                               <p class="text-left card-text">LLoremd dnturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was  of Lorem Ipsum.</p>
-                              <p class="card-text text-center"><a href=""> Adquirir</a></p>
+                              <p class="card-text text-center"><a class="btn btnOrange inscripcion" href="javascript:void(0)"  data-id="2"> Adquirir</a></p>
                             </div>
                           </div>
                         </div>
@@ -68,14 +68,29 @@
                               <h3> 0$</h3>
                               <hr class"BarraSeparadora" />
                               <p class="text-left card-text">LLoremd dnturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was  of Lorem Ipsum.</p>
-                              <p class="card-text text-center"><a href=""> Adquirir</a></p>
+                              <p class="card-text text-center"><a class="btn btnOrange inscripcion" href="javascript:void(0)" data-id="3"> Adquirir</a></p>
                             </div>
                           </div>
                         </div>
                       </div>
+                    <div class="d-none" id="formulario">
                     <form class="" action="" method="post" style=" margin:auto; padding-left:60px; padding-right:60px;">
                       <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4" ><label for="name">Name:</label></div>
+                          <div class="p-0 pr-4 col-md-8"><input type="text" id="name" name="user_name"style="width:100%;"></input></div>
+                      </div>
+                      <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
+                          <div class="col-md-4" ><label for="name">Plan:</label></div>
+                          <div class="p-0 pr-4 col-md-8">
+                            <select name="tipo" class="form-control" id="plan">
+                                    <option value="0">plan Free(0 euros)</option>
+                                    <option value="50">plan parcial(50 euros)</option>
+                                    <option value="100">plan completo(100 euros)</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
+                          <div class="col-md-4" ><label for="name">telefono:</label></div>
                           <div class="p-0 pr-4 col-md-8"><input type="text" id="name" name="user_name"style="width:100%;"></input></div>
                       </div>
                       <div class="p-0 pr-2 pt-2 m-0 row col-md-12">
@@ -84,13 +99,13 @@
                       </div>
                       <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4" ><label for="msg">Message:</label></div>
-                          <div class="p-0  pr-4 col-md-8"><textarea id="msg" name="user_message" style="width:100%;"></textarea></div>
+                          <div class="p-0  pr-4 col-md-8"><textarea id="msg" name="user_message" style="width:100%; height:100px;"></textarea></div>
                       </div>
-
-                      <div class="button">
-                          <button type="submit">Send your message</button>
+                      <div class="p-0 pr-2 pt-2 m-0">
+                          <a class="btn btnOrange" type="submit" style="color: #000">Enviar</a>
                       </div>
                   </form>
+                </div>
             </div>
           </div>
         </div>
@@ -98,70 +113,35 @@
     </main>
     <!--/.container-->
     <footer class="footer">
-      <div>
-        CONGRESO
-      </div>
-    </footer>
+  		<div class="col-md-12 pt-2" align="center">
+  			<div class="row col-md-5 pt-4">
+  				<div class="col-md-4" align="center"><ion-icon class="footerIcon"  name="logo-youtube"></ion-icon></ion-icon></div>
+  				<div class=" col-md-4" align="center"><ion-icon class="footerIcon" name="logo-twitter"></ion-icon></ion-icon></div>
+  				<div class=" col-md-4" align="center"><ion-icon  class="footerIcon" name="logo-facebook" ></ion-icon></div>
+  			</div>
+  			<p>Nuestro Correo manolo.diazgil@alum.uca.es y nuestro telefono de contancto 607129378</p>
+  			<p>Trabajo para la asignatura de progracion en internet</p>
+  		</div>
+  	</footer>
   </body>
   <script type="text/javascript">
 
 
-  var array = [1,2,3];
-  $('#ponente'+array[0]).removeClass("d-none");
-  $('#ponente'+array[1]).removeClass("d-none");
-  $('#ponente'+array[2]).removeClass("d-none");
-
-
-  $('#reservar').hover(function(){
-          $(this).val("Logueate");
-      }, function() {
-          $(this).val("Reservar");
-      });
-  $('div.ponentes').hover(function(){
-        $(this).find(".redesSociales").removeClass("d-none");
-        $(this).find(".titulo").addClass("d-none");
-    }, function() {
-        $(this).find(".redesSociales").addClass("d-none");
-        $(this).find(".titulo").removeClass("d-none");
-    });
-
-  $('#btn-derecha').click(function(){
-  //  arrayAux = array;
-    $('#ponente'+array[0]).addClass("d-none");
-    $('#ponente'+array[1]).addClass("d-none");
-    $('#ponente'+array[2]).addClass("d-none");
-
-    $.each(array, function (index, value) {
-      if(array[index] == 6) array[index] =1;
-      else array[index]++;
-    });
-      //console.log(arrayAux);
-      console.log(array);
-
-
-      $('#ponente'+array[0]).removeClass("d-none");
-      $('#ponente'+array[1]).removeClass("d-none");
-      $('#ponente'+array[2]).removeClass("d-none");
-
+  $('.inscripcion').click(function(){
+      var id = $(this).data('id');
+      $('#formulario').removeClass("d-none");
+      $('#precios').addClass("d-none");
+      switch (id) {
+        case 1:$('#plan').val("0");
+          break;
+        case 2:$('#plan').val("50");
+          break;
+        case 3:$('#plan').val("100");
+          break;
+        default:
+      }
   });
-  $('#btn-izquierda').click(function(){
-  //  arrayAux = array;
-    $('#ponente'+array[0]).addClass("d-none");
-    $('#ponente'+array[1]).addClass("d-none");
-    $('#ponente'+array[2]).addClass("d-none");
-
-    $.each(array, function (index, value) {
-      if(array[index] == 1) array[index] =6;
-      else array[index]--;
-    });
-      //console.log(arrayAux);
-      console.log(array);
 
 
-      $('#ponente'+array[0]).removeClass("d-none");
-      $('#ponente'+array[1]).removeClass("d-none");
-      $('#ponente'+array[2]).removeClass("d-none");
-
-  });
   </script>
 </html>
