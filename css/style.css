@@ -17,6 +17,10 @@ padding-bottom: 60px;
 	padding: 90px 90px 40px 90px
 }
 
+.colorBlack{
+	color: #000;
+}
+
 .bg-blanco {
 	background-color: #FFF;
 }
@@ -42,7 +46,10 @@ padding-bottom: 60px;
  background: linear-gradient(to bottom,#0a0d18 0,rgba(22,22,22,.9) 100%,rgb(46, 46, 46) 100%);
  color: #fff;
 }
-
+.noticia{
+	background-color:#ef4035;
+	color: #fff;
+}
 a, a:link{
 	color: #ef4035;
 }
@@ -51,8 +58,29 @@ a:hover{
 	color: #ef4060;
 }
 
+.ponenteSection{
+  background-color: #e0684e;
+	color: #fff;
+	padding-top: 40px;
+	padding-bottom:40px;
+}
 
-h2{
+.noticiasSection{
+  background-color: #FFFF;
+	padding-top: 40px;
+	padding-bottom:40px;
+}
+.tituloNoticia{
+	font-weight: 600;
+	text-transform: uppercase !important;
+	font-size: 3em;
+}
+.cuadroNoticia{
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.titulo{
   font-weight: 900;
   text-transform: uppercase !important;
   font-size: 3rem;
@@ -156,17 +184,21 @@ hr{
 
 
 
+.arrow{
+	fill: #fff;
+}
 
 .ponentes {
   height:300px;
   width: 300px;
   margin:auto;
   border: 3px solid;
+  background-size: 300px;
 }
 
 ion-icon {
   font-size: 64px;
-  color: #000;
+  color: #fff;
 }
 .redesIcons{
   font-size: 30px;

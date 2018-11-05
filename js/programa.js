@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function(){
     $(".prog").click(function() {
       $("#titulo").text($(this).find("h3").text());
