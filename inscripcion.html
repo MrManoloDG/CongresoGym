@@ -7,6 +7,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+      <script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
       <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -75,10 +76,10 @@
                         </div>
                       </div>
                     <div class="d-none" id="formulario">
-                    <form class="m-auto px-5" action="" method="post" id="id_form" >
+                    <form class="m-auto px-5" action="#" method="post" id="id_form" onsubmit="return validar();">
                       <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
-                          <div class="col-md-4" ><label for="name">Name:</label></div>
-                          <div class="p-0 pr-4 col-md-8"><input class="w-100" type="text" id="name" name="user_name"></input></div>
+                          <div class="col-md-4" ><label for="name">Nombre:</label></div>
+                          <div class="p-0 pr-4 col-md-8"><input class="w-100 form-control" type="text" id="name" name="name" placeholder="Nombre"></input></div>
                       </div>
                       <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4" ><label for="name">Plan:</label></div>
@@ -91,19 +92,24 @@
                           </div>
                       </div>
                       <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
-                          <div class="col-md-4" ><label for="name">telefono:</label></div>
-                          <div class="p-0 pr-4 col-md-8"><input class="w-100" type="text" id="name" name="user_name"></input></div>
+                          <div class="col-md-4" ><label>Fecha Llegada y Salida:</label></div>
+                          <div class="p-0 pr-4 col-md-4"><input class="w-100 form-control" type="date" id="fechaini" name="fechaini" value="2018-11-09"></input></div>
+                          <div class="p-0 pr-4 col-md-4"><input class="w-100 form-control" type="date" id="fechafin" name="fechafin" value="2018-11-11"></input></div>
+                      </div>
+                      <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
+                          <div class="col-md-4" ><label for="telf">Telefono:</label></div>
+                          <div class="p-0 pr-4 col-md-8"><input class="w-100 form-control" type="text" id="telf" name="telf" placeholder="Telefono 8 digitos"></input></div>
                       </div>
                       <div class="p-0 pr-2 pt-2 m-0 row col-md-12">
                           <div class="col-md-4"><label for="mail">E-mail:</label></div>
-                          <div class="p-0 pr-4 col-md-8"><input class="w-100" type="email" id="mail" name="user_email"></input></div>
+                          <div class="p-0 pr-4 col-md-8"><input class="w-100 form-control" type="email" id="email" name="email" placeholder="email"></input></div>
                       </div>
                       <div class="p-0  pr-2 pt-2 m-0 row col-md-12">
-                          <div class="col-md-4" ><label for="msg">Message:</label></div>
-                          <div class="p-0  pr-4 col-md-8"><textarea class="w-100" id="msg" name="user_message"></textarea></div>
+                          <div class="col-md-4" ><label for="msg">Observaciones:</label></div>
+                          <div class="p-0  pr-4 col-md-8"><textarea class="w-100 form-control" id="msg" name="message"></textarea></div>
                       </div>
                       <div class="p-0 pr-2 pt-2 m-0">
-                          <a class="btn btnOrange" type="submit">Enviar</a>
+                          <input class="btn btnOrange" type="submit" value="Enviar" id="submit">
                       </div>
                   </form>
                 </div>
@@ -126,50 +132,84 @@
     </footer>
   </body>
   <script type="text/javascript">
-/*
-  function validacion(f) {
-  var flag = true;
-  var msg = "Debes escribir algo en los campos:\n";
-  if(f.elements[0].value == "")
-  {
-    msg += "- Jugador 1\n";
-    flag = false;
-  }
-
-  if(f.elements["jugador2"].value == "")
-  {
-    msg += "- Jugador 2\n";
-    flag = false;
-  }
-
-  if(f.jugador3.value == "")
-  {
-    msg += "- Jugador 3\n";
-    flag = false;
-  }
-
-  if(flag == false)
-    alert("debes rellenar los campos correctamente");
-  return flag;
-}
-
-*/
   function validar() {
-    alert();
-    validarEmail();
+    var comprobar = true;
+    var texto = validarTexto();
+    var email = validarEmail();
+    var telf  = validarTelf();
+    var fecha = validarFecha();
+    comprobar = texto && email && telf && fecha;
+    if(!comprobar){
+      swal({
+        title: "Oooops!",
+        text: "Parece que un campo del formulario no esta correcto por favor revisalo",
+        icon: "warning",
+        button: "Volver",
+      });
+      return false;
+    }
+    return false;
+  }
+  function validarFecha() {
+    var comprobar = true;
+    var fechaini = $("#fechaini");
+    var fechafin = $("#fechafin");
+    var arr = [ "2018-11-09", "2018-11-10", "2018-11-11" ];
+    if(fechaini.val() == "" || jQuery.inArray( fechaini.val(), arr ) == -1){
+      comprobar = false;
+      fechaini.css('border', 'solid 4px red');
+    }else{
+      fechaini.css('border', 'solid 0px red');
+    }
+    if(fechafin.val() == "" || jQuery.inArray( fechafin.val(), arr ) == -1){
+      comprobar = false;
+      fechafin.css('border', 'solid 4px red');
+    }else{
+      fechafin.css('border', 'solid 0px red');
+    }
+    if (comprobar) {
+      if (fechaini.val() > fechafin.val()) {
+        comprobar = false;
+        fechaini.css('border', 'solid 4px red');
+        fechafin.css('border', 'solid 4px red');
+      }else{
+        fechaini.css('border', 'solid 0px red');
+        fechafin.css('border', 'solid 0px red');
+      }
+    }
+    return comprobar;
+  }
+  function validarTelf() {
+    var telf_validator = /^[9|6|7][0-9]{8}$/;
+    if($('#telf').val() != "" && telf_validator.test($('#telf').val())){
+      $('#telf').css('border', 'solid 0px red');
+      return true;
+    }else {
+      $('#telf').css('border', 'solid 4px red');
+      return false;
+    }
   }
   function validarTexto() {
-
+    var text_validator = /^[A-Za-z\s]+$/g;
+    if($('#name').val() != "" && text_validator.test($('#name').val())){
+      $('#name').css('border', 'solid 0px red');
+      return true;
+    }else {
+      $('#name').css('border', 'solid 4px red');
+      return false;
+    }
   }
   function validarEmail() {
-      var email_validator = "^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$";
-      $('input[name=email]').val();
-      alert($('input[name=email]').val());
+    var email_validator = /^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/;
+
+    if(email_validator.test($('#email').val())){
+      $('#email').css('border', 'solid 0px red');
+      return true;
+    }else {
+      $('#email').css('border', 'solid 4px red');
+      return false;
+    }
   }
-  $('#id_form').submit(function() {
-    alert();
-    validar();
-  });
   $('.inscripcion').click(function(){
       var id = $(this).data('id');
       $('#formulario').removeClass("d-none");
