@@ -50,11 +50,11 @@ padding-bottom: 60px;
 	background-color:#ef4035;
 	color: #fff;
 }
-a, a:link{
+.orangeHref, .orangeHref:link{
 	color: #ef4035;
 }
 
-a:hover{
+.orangeHref:hover{
 	color: #ef4060;
 }
 
@@ -65,8 +65,12 @@ a:hover{
 	padding-bottom:40px;
 }
 
+.programaSection{
+	background-color: #FFF;
+}
+
 .noticiasSection{
-  background-color: #FFFF;
+  background-color: #FFF;
 	padding-top: 40px;
 	padding-bottom:40px;
 }
@@ -86,9 +90,8 @@ a:hover{
   font-size: 3rem;
 }
 header a,header a:link {
-	color: #FFFF;
+	color: #FFF;
 	text-decoration: none;
-	text-size: 2em;
 }
 
 header li {
@@ -113,17 +116,24 @@ hr{
   height: 2px;
   width: 90%;
   background-color: #ef4035;
-  color: #FFFF;
+  color: #FFF;
 }
 
 .footer {
-  position: float;
   bottom: 0;
   width: 100%;
   line-height: 60px;
 	height: 220px;
   background-color: #000;
-  color:#FFFF
+  color:#FFF;
+}
+
+.flechaDerecha{
+	text-align: right;
+}
+
+.flechaIzquierda{
+	text-align: left;
 }
 
 .textoInscripcion {
@@ -131,10 +141,9 @@ hr{
   top: 10%;
   display: block;
   opacity: 0.8;
-  position: float;
   background-color: #000;
   width: 90%;
-  color:#FFFF
+  color:#FFF;
 }
 
 
@@ -143,21 +152,18 @@ hr{
   top: 10%;
   display: block;
   opacity: 0.8;
-  position: float;
   background-color: #000;
   width: 30%;
-  color:#FFFF
+  color:#FFF;
 }
 
 .textoInicioLeft {
   margin: auto;
   top: 25%;
-
   opacity: 0.8;
-  position: float;
   background-color: #000;
   width: 100%;
-  color:#FFFF
+  color:#FFF;
 }
 
 .textoInicioRight {
@@ -165,17 +171,16 @@ hr{
   top: 5%;
   display: block;
   opacity: 0.8;
-  position: float;
   background-color: #000;
   width: 80%;
-  color:#FFFF
+  color:#FFF;
 }
 
 .contenido{
 	margin: auto;
     opacity: 0.8;
     background-color: #000;
-    color:#FFFF;
+    color:#FFF;
 	border-radius: 10px;
 	text-align: justify;
   text-align-last: center;
@@ -202,7 +207,7 @@ ion-icon {
 }
 .redesIcons{
   font-size: 30px;
-  color: #FFFF;
+  color: #FFF;
 }
 .footerIcon{
   font-size: 30px;
@@ -212,9 +217,8 @@ ion-icon {
 
 .tituloPonente{
   opacity: 0.8;
-  position: float;
   background-color: #000;
-  color: #FFFF;
+  color: #FFF;
   width: 100%;
 
 
@@ -222,9 +226,8 @@ ion-icon {
 
 .redesSociales{
   opacity: 0.8;
-  position: float;
   background-color: #000;
-  color: #FFFF;
+  color: #FFF;
   width: 100%;
   height: 100%;
   padding-top: 4em;
@@ -291,13 +294,12 @@ li a {
 			z-index: 100;
 	}
 	.footer {
-	  position: float;
 	  bottom: 0;
 	  width: 100%;
 	  line-height: 60px;
 		height: 370px;
 	  background-color: #000;
-	  color:#FFFF
+	  color:#FFF;
 	}
 }
 
@@ -311,9 +313,8 @@ li a {
 	  top: 10%;
 	  display: block;
 	  opacity: 0.8;
-	  position: float;
 	  background-color: #000;
 	  width: 80%;
-	  color:#FFFF
+	  color:#FFF;
 	}
 }
