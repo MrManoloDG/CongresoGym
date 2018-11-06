@@ -132,99 +132,103 @@
     </footer>
   </body>
   <script type="text/javascript">
-  function validar() {
-    var comprobar = true;
-    var texto = validarTexto();
-    var email = validarEmail();
-    var telf  = validarTelf();
-    var fecha = validarFecha();
-    comprobar = texto && email && telf && fecha;
-    if(!comprobar){
-      swal({
-        title: "Oooops!",
-        text: "Parece que un campo del formulario no esta correcto por favor revisalo",
-        icon: "warning",
-        button: "Volver",
-      });
-      return false;
+
+    //----------Validacion del formulario-------------
+    function validar() {
+      var comprobar = true;
+      var texto = validarTexto();
+      var email = validarEmail();
+      var telf  = validarTelf();
+      var fecha = validarFecha();
+      comprobar = texto && email && telf && fecha;
+      if(!comprobar){
+        swal({
+          title: "Oooops!",
+          text: "Parece que algo del formulario no esta correcto por favor revisalo",
+          icon: "warning",
+          button: "Volver",
+        });
+        return false;
+      }
+      return true;
     }
-    return false;
-  }
-  function validarFecha() {
-    var comprobar = true;
-    var fechaini = $("#fechaini");
-    var fechafin = $("#fechafin");
-    var arr = [ "2018-11-09", "2018-11-10", "2018-11-11" ];
-    if(fechaini.val() == "" || jQuery.inArray( fechaini.val(), arr ) == -1){
-      comprobar = false;
-      fechaini.css('border', 'solid 4px red');
-    }else{
-      fechaini.css('border', 'solid 0px red');
-    }
-    if(fechafin.val() == "" || jQuery.inArray( fechafin.val(), arr ) == -1){
-      comprobar = false;
-      fechafin.css('border', 'solid 4px red');
-    }else{
-      fechafin.css('border', 'solid 0px red');
-    }
-    if (comprobar) {
-      if (fechaini.val() > fechafin.val()) {
+    function validarFecha() {
+      var comprobar = true;
+      var fechaini = $("#fechaini");
+      var fechafin = $("#fechafin");
+      var arr = [ "2018-11-09", "2018-11-10", "2018-11-11" ];
+      if(fechaini.val() == "" || jQuery.inArray( fechaini.val(), arr ) == -1){
         comprobar = false;
         fechaini.css('border', 'solid 4px red');
-        fechafin.css('border', 'solid 4px red');
       }else{
         fechaini.css('border', 'solid 0px red');
+      }
+      if(fechafin.val() == "" || jQuery.inArray( fechafin.val(), arr ) == -1){
+        comprobar = false;
+        fechafin.css('border', 'solid 4px red');
+      }else{
         fechafin.css('border', 'solid 0px red');
       }
-    }
-    return comprobar;
-  }
-  function validarTelf() {
-    var telf_validator = /^[9|6|7][0-9]{8}$/;
-    if($('#telf').val() != "" && telf_validator.test($('#telf').val())){
-      $('#telf').css('border', 'solid 0px red');
-      return true;
-    }else {
-      $('#telf').css('border', 'solid 4px red');
-      return false;
-    }
-  }
-  function validarTexto() {
-    var text_validator = /^[A-Za-z\s]+$/g;
-    if($('#name').val() != "" && text_validator.test($('#name').val())){
-      $('#name').css('border', 'solid 0px red');
-      return true;
-    }else {
-      $('#name').css('border', 'solid 4px red');
-      return false;
-    }
-  }
-  function validarEmail() {
-    var email_validator = /^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/;
-
-    if(email_validator.test($('#email').val())){
-      $('#email').css('border', 'solid 0px red');
-      return true;
-    }else {
-      $('#email').css('border', 'solid 4px red');
-      return false;
-    }
-  }
-  $('.inscripcion').click(function(){
-      var id = $(this).data('id');
-      $('#formulario').removeClass("d-none");
-      $('#precios').addClass("d-none");
-      switch (id) {
-        case 1:$('#plan').val("0");
-          break;
-        case 2:$('#plan').val("50");
-          break;
-        case 3:$('#plan').val("100");
-          break;
-        default:
+      if (comprobar) {
+        if (fechaini.val() > fechafin.val()) {
+          comprobar = false;
+          fechaini.css('border', 'solid 4px red');
+          fechafin.css('border', 'solid 4px red');
+        }else{
+          fechaini.css('border', 'solid 0px red');
+          fechafin.css('border', 'solid 0px red');
+        }
       }
-  });
+      return comprobar;
+    }
+    function validarTelf() {
+      var telf_validator = /^[9|6|7][0-9]{8}$/;
+      if($('#telf').val() != "" && telf_validator.test($('#telf').val())){
+        $('#telf').css('border', 'solid 0px red');
+        return true;
+      }else {
+        $('#telf').css('border', 'solid 4px red');
+        return false;
+      }
+    }
+    function validarTexto() {
+      var text_validator = /^[A-Za-z\s]+$/g;
+      if($('#name').val() != "" && text_validator.test($('#name').val())){
+        $('#name').css('border', 'solid 0px red');
+        return true;
+      }else {
+        $('#name').css('border', 'solid 4px red');
+        return false;
+      }
+    }
+    function validarEmail() {
+      var email_validator = /^[a-zA-Z0-9_\-\.~]{2,}@[a-zA-Z0-9_\-\.~]{2,}\.[a-zA-Z]{2,4}$/;
 
+      if(email_validator.test($('#email').val())){
+        $('#email').css('border', 'solid 0px red');
+        return true;
+      }else {
+        $('#email').css('border', 'solid 4px red');
+        return false;
+      }
+    }
+
+    //-----Fin Validacion---------
+
+    $('.inscripcion').click(function(){
+        var id = $(this).data('id');
+        $('#formulario').removeClass("d-none");
+        $('#precios').addClass("d-none");
+        switch (id) {
+          case 1:$('#plan').val("0");
+            break;
+          case 2:$('#plan').val("50");
+            break;
+          case 3:$('#plan').val("100");
+            break;
+          default:
+        }
+    });
 
   </script>
 </html>
