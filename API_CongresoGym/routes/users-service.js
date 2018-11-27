@@ -21,7 +21,7 @@ Users.prototype.connectDb = function (callback) {
 };
 
 Users.prototype.add = function (user, callback) {
-    return db.insert(movie, callback);
+    return db.insert(user, callback);
 };
 
 Users.prototype.get = function (_id, callback) {
