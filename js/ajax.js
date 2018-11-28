@@ -1,4 +1,3 @@
-
 function crearEditar(id = "") {
 	var name = $("#name").val();
 	var plan = $("#plan").val();
@@ -7,7 +6,6 @@ function crearEditar(id = "") {
 	var telf = $("#telf").val();
 	var email = $("#email").val();
 	var comment = $("#msg").val();
-	alert(id);
 	if(id == ""){
 		$.ajax({
 	        type: "POST",
@@ -71,4 +69,50 @@ function crearEditar(id = "") {
 	        }
 	    });
 	}
+}
+
+function eliminar(id) {
+	if(id != ""){
+		$.ajax({
+	        type: "DELETE",
+	        url: "http://localhost:8080/users/"+id,
+			success: function(data) {
+				swal({
+	              title: "eliminación realizada con exito",
+	              icon: "success",
+	              button: "Volver",
+	            });
+	        },
+	        error: function(res) {
+				swal({
+	              title: "Oooops!",
+	              text: "ERROR " + res.statusText,
+	              icon: "warning",
+	              button: "Volver",
+	            });
+	        }
+	    });
+	}
+}
+
+function eliminarTodas() {
+		$.ajax({
+	        type: "DELETE",
+	        url: "http://localhost:8080/users/",
+			success: function(data) {
+				swal({
+	              title: "eliminación realizada con exito",
+	              icon: "success",
+	              button: "Volver",
+	            });
+	        },
+	        error: function(res) {
+				swal({
+	              title: "Oooops!",
+	              text: "ERROR " + res.statusText,
+	              icon: "warning",
+	              button: "Volver",
+	            });
+	        }
+	    });
 }
