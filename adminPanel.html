@@ -171,11 +171,13 @@
     			</div>
     		</footer>
     		<script>
+
+				
+
         var request = new XMLHttpRequest();
         request.open('GET', 'http://localhost:8080/users', true);
         request.onload = function () {
 
-          // Begin accessing JSON data here
           var data = JSON.parse(this.response);
           console.log(data);
           $.each(data, function (index, value) {
