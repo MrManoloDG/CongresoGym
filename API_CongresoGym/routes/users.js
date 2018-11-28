@@ -32,7 +32,7 @@ router.post('/', function (req, res) {
                 });
             } else if (user !== null) {
                 res.send({
-                    msg: 'Film created!'
+                    msg: 'User created!'
                 });
             }
         }
@@ -47,7 +47,7 @@ router.delete('/', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Films deleted!'
+                msg: 'Users deleted!'
             });
         }
     });
@@ -83,7 +83,7 @@ router.put('/:_id', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Film updated!'
+                msg: 'User updated!'
             });
         }
     });
@@ -98,7 +98,7 @@ router.delete('/:_id', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Film deleted!'
+                msg: 'User deleted!'
             });
         }
     });
