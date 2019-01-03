@@ -3,6 +3,8 @@ package com.example.manue.congresogymmobile;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,8 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,28 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Referenciamos al RecyclerView
+        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        // Mejoramos rendimiento con esta configuración
+        mRecyclerView.setHasFixedSize(true);
+        // Creamos un LinearLayoutManager para gestionar el item.xml creado antes
+        mLayoutManager = new LinearLayoutManager(this);
+        // Lo asociamos al RecyclerView
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        // Creamos un ArrayList de Users
+        ArrayList<User> users = new ArrayList<User>();
+        // Creamos un UserAdapter pasándole todos nuestro Pokemons
+        mAdapter = new UserAdapter(users);
+        // Asociamos el adaptador al RecyclerView
+        mRecyclerView.setAdapter(mAdapter);
+
+        users.add(new User("123", "dawdaw", 50, null, null,6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+        users.add(new User("123", "adwaw", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+        users.add(new User("123", "hrehe", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+        users.add(new User("123", "ppppp", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+        users.add(new User("123", "ooooo", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+        users.add(new User("123", "ooooo", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
     }
 
     @Override
