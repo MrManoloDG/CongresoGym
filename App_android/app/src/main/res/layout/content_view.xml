@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".user_view"
+    tools:showIn="@layout/app_bar_main"
+    android:gravity="center_horizontal"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- Nombre -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="@string/nombre_form" />
+
+            <TextView
+                android:id="@+id/txt_nombre_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prueba" />
+        </LinearLayout>
+
+        <!-- Telefono -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="@string/tel_fono_form" />
+
+            <TextView
+                android:id="@+id/txt_tel_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prueba" />
+        </LinearLayout>
+
+        <!-- Email -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="@string/email_form" />
+
+            <TextView
+                android:id="@+id/txt_email_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prueba" />
+        </LinearLayout>
+
+        <!-- Fecha inicio -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center_horizontal"
+                android:text="@string/fecha_inicio_form" />
+
+            <TextView
+                android:id="@+id/txt_date_start_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prueba" />
+        </LinearLayout>
+
+        <!-- Fecha fin -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="@string/fecha_fin_form" />
+
+            <TextView
+                android:id="@+id/txt_date_end_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prueba" />
+        </LinearLayout>
+
+        <!-- Plan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="@string/plan_form" />
+
+            <TextView
+                android:id="@+id/txt_plan_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prueba" />
+        </LinearLayout>
+
+        <!-- Comentario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:text="@string/nombre_form" />
+
+            <TextView
+                android:id="@+id/txt_comment_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginHorizontal="70dp"
+                android:text="Prueba" />
+
+            <Button
+                android:id="@+id/btn_update_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:text="Editar" />
+
+            <Button
+                android:id="@+id/btn_delete_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#FA5858"
+                android:padding="5dp"
+                android:text="Eliminar" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

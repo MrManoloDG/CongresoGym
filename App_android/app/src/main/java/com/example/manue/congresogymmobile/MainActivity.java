@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity
         // Creamos un ArrayList de Users
         ArrayList<User> users = new ArrayList<User>();
         // Creamos un UserAdapter pasándole todos nuestro Pokemons
-        mAdapter = new UserAdapter(users);
+        mAdapter = new UserAdapter(users,MainActivity.this);
         // Asociamos el adaptador al RecyclerView
         mRecyclerView.setAdapter(mAdapter);
 
-        users.add(new User("123", "dawdaw", 50, null, null,6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+        users.add(new User("123", "dawda", 50, null, null,6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
         users.add(new User("123", "adwaw", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
         users.add(new User("123", "hrehe", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
         users.add(new User("123", "ppppp", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));

@@ -7,4 +7,12 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="listado_de_participantes">Listado de participantes</string>
+    <string name="nombre_form">Nombre:</string>
+    <string name="tel_fono_form">Teléfono:</string>
+    <string name="email_form">Email:</string>
+    <string name="fecha_inicio_form">Fecha Inicio:</string>
+    <string name="fecha_fin_form">Fecha fin:</string>
+    <string name="plan_form">Plan:</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_user__update">User_Update</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.example.manue.congresogymmobile;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,12 +12,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
 
     private ArrayList<User> users;
     private Context context;
+    private MainActivity mainActivity;
 
 
 
@@ -37,8 +41,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         }
     }
 
-    public UserAdapter(ArrayList<User> myDataset) {
+    public UserAdapter(ArrayList<User> myDataset,MainActivity ma) {
         users = myDataset;
+        mainActivity = ma;
     }
 
     @NonNull
@@ -63,6 +68,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 int duration = Toast.LENGTH_LONG;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+
+                Intent intent = new Intent(mainActivity, user_view.class );
+                Bundle b = new Bundle();
+                b.putSerializable("persona", (Serializable) users.get(position));
+                intent.putExtras(b);
+                mainActivity.startActivity(intent);
+
             }
         });
     }
