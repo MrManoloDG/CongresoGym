@@ -1,9 +1,11 @@
 package com.example.manue.congresogymmobile;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,9 +43,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         }
     }
 
-    public UserAdapter(ArrayList<User> myDataset,MainActivity ma) {
+    public UserAdapter(ArrayList<User> myDataset) {
         users = myDataset;
-        mainActivity = ma;
+        //mainActivity = ma;
     }
 
     @NonNull
@@ -56,11 +58,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        holder.tel.setText(String.valueOf(users.get(position).getTel()));
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+        holder.tel.setText(users.get(position).getTel());
         holder.name.setText(users.get(position).getName());
         holder.email.setText(users.get(position).getEmail());
-        holder.plan.setText(String.valueOf(users.get(position).getPlan()));
+        holder.plan.setText(users.get(position).getPlan());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,11 +71,22 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
 
-                Intent intent = new Intent(mainActivity, user_view.class );
+                FragmentManager fragmentManager;
+                FragmentTransaction fragmentTransaction;
+                fragmentManager = ((FragmentActivity)context).getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                User_View fragment = new User_View();
                 Bundle b = new Bundle();
                 b.putSerializable("persona", (Serializable) users.get(position));
+                fragment.setArguments(b);
+                fragmentTransaction.replace(R.id.fragment, fragment);
+                fragmentTransaction.commit();
+                /*
+                Intent intent = new Intent(mainActivity, User_View.class );
+
                 intent.putExtras(b);
                 mainActivity.startActivity(intent);
+                */
 
             }
         });

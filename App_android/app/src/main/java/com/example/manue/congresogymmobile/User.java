@@ -6,14 +6,14 @@ import java.util.Date;
 public class User implements Serializable {
     private String id;
     private String name;
-    private int    plan;
-    private Date   date_start;
-    private Date   date_end;
-    private int    tel;
+    private String    plan;
+    private String  date_start;
+    private String   date_end;
+    private String    tel;
     private String email;
     private String comment;
 
-    public User(String id, String name, int plan, Date date_start, Date date_end, int tel, String email, String comment) {
+    public User(String id, String name, String plan, String date_start, String date_end, String tel, String email, String comment) {
         this.id = id;
         this.name = name;
         this.plan = plan;
@@ -40,35 +40,35 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public int getPlan() {
+    public String getPlan() {
         return plan;
     }
 
-    public void setPlan(int plan) {
+    public void setPlan(String plan) {
         this.plan = plan;
     }
 
-    public Date getDate_start() {
+    public String getDate_start() {
         return date_start;
     }
 
-    public void setDate_start(Date date_start) {
+    public void setDate_start(String date_start) {
         this.date_start = date_start;
     }
 
-    public Date getDate_end() {
+    public String getDate_end() {
         return date_end;
     }
 
-    public void setDate_end(Date date_end) {
+    public void setDate_end(String date_end) {
         this.date_end = date_end;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 

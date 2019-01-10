@@ -3,8 +3,8 @@ package com.example.manue.congresogymmobile;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,15 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +26,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -50,27 +36,14 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Referenciamos al RecyclerView
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        // Mejoramos rendimiento con esta configuración
-        mRecyclerView.setHasFixedSize(true);
-        // Creamos un LinearLayoutManager para gestionar el item.xml creado antes
-        mLayoutManager = new LinearLayoutManager(this);
-        // Lo asociamos al RecyclerView
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        // Creamos un ArrayList de Users
-        ArrayList<User> users = new ArrayList<User>();
-        // Creamos un UserAdapter pasándole todos nuestro Pokemons
-        mAdapter = new UserAdapter(users,MainActivity.this);
-        // Asociamos el adaptador al RecyclerView
-        mRecyclerView.setAdapter(mAdapter);
+        setFragment(0);
 
-        users.add(new User("123", "dawda", 50, null, null,6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
-        users.add(new User("123", "adwaw", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
-        users.add(new User("123", "hrehe", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
-        users.add(new User("123", "ppppp", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
-        users.add(new User("123", "ooooo", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
-        users.add(new User("123", "ooooo", 50, new Date("20/10/2018"), new Date("21/10/2018"),6656565 ,"adwdaw@adwdaadw.com", "adwawadw"));
+
+
+
+
+
+
     }
 
     @Override
@@ -119,14 +92,26 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void setFragment(int position) {
+        FragmentManager fragmentManager;
+        FragmentTransaction fragmentTransaction;
+        switch (position) {
+            case 0:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                User_List fragment = new User_List();
+                fragmentTransaction.add(R.id.fragment, fragment);
+                fragmentTransaction.commit();
+                break;
+        }
+    }
+
+
 }

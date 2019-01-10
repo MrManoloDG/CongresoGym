@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".User_Update"
-    tools:showIn="@layout/app_bar_user__update">
+    tools:context=".User_Create_Update">
 
-    <LinearLayout
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="24dp"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-        <!-- Nombre -->
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <!-- Nombre -->
 
 
             <TextView
@@ -31,7 +47,7 @@
                 android:text="Prueba" />
 
 
-        <!-- Telefono -->
+            <!-- Telefono -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,7 +61,7 @@
                 android:textAlignment="center"
                 android:text="Prueba" />
 
-        <!-- Email -->
+            <!-- Email -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +75,7 @@
                 android:textAlignment="center"
                 android:text="Prueba" />
 
-        <!-- Fecha inicio -->
+            <!-- Fecha inicio -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +91,7 @@
                 android:inputType="date"
                 android:text="Prueba" />
 
-        <!-- Fecha fin -->
+            <!-- Fecha fin -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -91,7 +107,7 @@
                 android:inputType="date"
                 android:text="Prueba" />
 
-        <!-- Plan -->
+            <!-- Plan -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,12 +121,12 @@
                 android:textAlignment="center"
                 android:text="Prueba" />
 
-        <!-- Comentario -->
+            <!-- Comentario -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
-                android:text="@string/nombre_form" />
+                android:text="@string/comentario" />
 
             <EditText
                 android:id="@+id/txt_comment_view"
@@ -128,7 +144,12 @@
 
 
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
-</LinearLayout>
+
+
+
+
+</RelativeLayout>

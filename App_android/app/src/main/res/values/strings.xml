@@ -15,4 +15,8 @@
     <string name="plan_form">Plan:</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_user__update">User_Update</string>
+    <string name="comentario">Comentario</string>
+    <string name="asistentes">Asistentes</string>
+    <string name="programaci_n">Programación</string>
+    <string name="localizaci_n">Localización</string>
 </resources>
