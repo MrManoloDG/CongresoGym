@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,6 +47,7 @@ public class User_List extends Fragment {
                 fragmentTransaction = fragmentManager.beginTransaction();
                 User_Create_Update fragment = new User_Create_Update();
                 fragmentTransaction.replace(R.id.fragment,fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -107,6 +109,9 @@ public class User_List extends Fragment {
 
                     }
                 }catch (Exception e){
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(getContext(), "Se ha producido un error", duration);
+                    toast.show();
                     e.printStackTrace();
                 }
             }
