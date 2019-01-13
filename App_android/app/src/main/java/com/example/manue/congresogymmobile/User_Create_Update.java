@@ -5,6 +5,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -19,13 +22,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class User_Create_Update extends android.support.v4.app.Fragment {
@@ -51,8 +58,15 @@ public class User_Create_Update extends android.support.v4.app.Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(user != null){
+                    String user_id = user.getId();
+                    if(user_id != null){
+                        new EditarUserTask().execute();
+                    }
+                }else {
+                    new CreateUserTask().execute();
+                }
+
             }
         });
 
@@ -88,18 +102,42 @@ public class User_Create_Update extends android.support.v4.app.Fragment {
 
 
 
-    private class LongRunningGetIO extends AsyncTask<Void, Void, String> {
+    private class CreateUserTask extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... params) {
             String text = null;
+
+            final MediaType JSON
+                    = MediaType.get("application/json; charset=utf-8");
+
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url("https://jsonplaceholder.typicode.com/todos/1")
-                    .build();
+
+            JSONObject jsonObject = new JSONObject();
             try {
-                Response res = client.newCall(request).execute();
-                text = res.body().string();
+                jsonObject.put("name", txt_name.getText());
+                jsonObject.put("plan", txt_plan.getText());
+                jsonObject.put("date_start", txt_date_start.getText());
+                jsonObject.put("date_end", txt_date_end.getText());
+                jsonObject.put("email", txt_email.getText());
+                jsonObject.put("telf", txt_tel.getText());
+                jsonObject.put("comment", txt_coment.getText());
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            String json = jsonObject.toString();
+
+            RequestBody body = RequestBody.create(JSON, json);
+            Request request = new Request.Builder()
+                    .url("http://10.0.2.2:8080/users")
+                    .post(body)
+                    .build();
+            try{
+                Response response = client.newCall(request).execute();
+                text = response.body().string();
+
+
             } catch (Exception e) {
                 return e.toString();
             }
@@ -109,12 +147,96 @@ public class User_Create_Update extends android.support.v4.app.Fragment {
         @Override
         protected void onPostExecute(String results) {
             if (results != null) {
+
                 JSONObject respJSON = null;
                 try{
                     respJSON = new JSONObject(results);
-                    String title = respJSON.getString("title");
-                    //txtResult.setText(title);
+                    String title = respJSON.getString("msg");
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(getContext(), title, duration);
+                    toast.show();
+
+                    FragmentManager fragmentManager;
+                    FragmentTransaction fragmentTransaction;
+                    fragmentManager = ((FragmentActivity)getContext()).getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    User_List fragment = new User_List();
+                    fragmentTransaction.replace(R.id.fragment,fragment);
+                    fragmentTransaction.commit();
                 }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private class EditarUserTask extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+            String text = null;
+
+            final MediaType JSON
+                    = MediaType.get("application/json; charset=utf-8");
+
+            OkHttpClient client = new OkHttpClient();
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("name", txt_name.getText());
+                jsonObject.put("plan", txt_plan.getText());
+                jsonObject.put("date_start", txt_date_start.getText());
+                jsonObject.put("date_end", txt_date_end.getText());
+                jsonObject.put("email", txt_email.getText());
+                jsonObject.put("telf", txt_tel.getText());
+                jsonObject.put("comment", txt_coment.getText());
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            String json = jsonObject.toString();
+
+            RequestBody body = RequestBody.create(JSON, json);
+            Request request = new Request.Builder()
+                    .url("http://10.0.2.2:8080/users/"+user.getId())
+                    .put(body)
+                    .build();
+            try{
+                Response response = client.newCall(request).execute();
+                text = response.body().string();
+            } catch (Exception e) {
+                int duration = Toast.LENGTH_LONG;
+                Toast toast = Toast.makeText(getContext(), "Se ha producido un error", duration);
+                toast.show();
+                return e.toString();
+            }
+            return text;
+        }
+
+        @Override
+        protected void onPostExecute(String results) {
+            if (results != null) {
+
+
+                JSONObject respJSON = null;
+                try{
+                    respJSON = new JSONObject(results);
+                    String title = respJSON.getString("msg");
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(getContext(), title, duration);
+                    toast.show();
+
+                    FragmentManager fragmentManager;
+                    FragmentTransaction fragmentTransaction;
+                    fragmentManager = ((FragmentActivity)getContext()).getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    User_List fragment = new User_List();
+                    fragmentTransaction.replace(R.id.fragment,fragment);
+                    fragmentTransaction.commit();
+                }catch (Exception e){
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(getContext(), "Se ha producido un error", duration);
+                    toast.show();
                     e.printStackTrace();
                 }
             }

@@ -19,4 +19,8 @@
     <string name="asistentes">Asistentes</string>
     <string name="programaci_n">Programación</string>
     <string name="localizaci_n">Localización</string>
+    <string name="fechas">Fechas</string>
+    <string name="congreso_gym">Congreso Gym</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

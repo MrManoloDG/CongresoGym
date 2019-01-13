@@ -66,10 +66,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence text = "You've clicked on " + users.get(position).getName();
-                int duration = Toast.LENGTH_LONG;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
 
                 FragmentManager fragmentManager;
                 FragmentTransaction fragmentTransaction;
@@ -80,6 +76,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 b.putSerializable("persona", (Serializable) users.get(position));
                 fragment.setArguments(b);
                 fragmentTransaction.replace(R.id.fragment, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 /*
                 Intent intent = new Intent(mainActivity, User_View.class );

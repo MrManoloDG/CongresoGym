@@ -1,6 +1,8 @@
 package com.example.manue.congresogymmobile;
 
 
+import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -11,6 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 public class User_View extends Fragment {
@@ -77,11 +89,71 @@ public class User_View extends Fragment {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Snackbar.make(view, "Estas seguro?", Snackbar.LENGTH_LONG)
+                        //.setActionTextColor(Color.CYAN)
+                        //.setActionTextColor(getResources().getColor(R.color.snackbar_action))
+                        .setAction("Borrar", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                new DeleteUserTask().execute();
+                            }
+                        })
+                        .show();
             }
         });
 
         return view;
+    }
+
+    private class DeleteUserTask extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+            String text = null;
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url("http://10.0.2.2:8080/users/"+user.getId())
+                    .delete()
+                    .build();
+            try{
+                Response response = client.newCall(request).execute();
+                text = response.body().string();
+            } catch (Exception e) {
+                int duration = Toast.LENGTH_LONG;
+                Toast toast = Toast.makeText(getContext(), "Se ha producido un error", duration);
+                toast.show();
+                return e.toString();
+            }
+            return text;
+        }
+
+        @Override
+        protected void onPostExecute(String results) {
+            if (results != null) {
+                JSONObject respJSON = null;
+                try{
+                    respJSON = new JSONObject(results);
+                    String title = respJSON.getString("msg");
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(getContext(), title, duration);
+                    toast.show();
+
+                    FragmentManager fragmentManager;
+                    FragmentTransaction fragmentTransaction;
+                    fragmentManager = ((FragmentActivity)getContext()).getSupportFragmentManager();
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    User_List fragment = new User_List();
+                    fragmentTransaction.replace(R.id.fragment,fragment);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }catch (Exception e){
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(getContext(), "Se ha producido un error", duration);
+                    toast.show();
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 
