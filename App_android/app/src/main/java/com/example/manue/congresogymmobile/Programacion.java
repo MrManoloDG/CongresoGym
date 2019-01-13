@@ -16,10 +16,10 @@ public class Programacion extends Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.programa, container, false);
 
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("First Tab"));
-        tabLayout.addTab(tabLayout.newTab().setText("Second Tab"));
-        tabLayout.addTab(tabLayout.newTab().setText("Third Tab"));
+        TabLayout tabLayout = view.findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("Dia 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Dia 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Dia 3"));
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager viewPager = (ViewPager) view.findViewById(R.id.page);

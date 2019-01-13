@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -36,7 +37,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        setFragment(0);
+        String menuFragment = getIntent().getStringExtra("menuFragment");
+
+        if(menuFragment == null){
+            setFragment(0);
+        }
+        else{
+            setFragment(1);
+        }
+
 
 
 
@@ -98,8 +107,17 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment, fragment);
             fragmentTransaction.commit();
         } else if (id == R.id.nav_localizacion) {
-
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            Localizacion fragment = new Localizacion();
+            fragmentTransaction.replace(R.id.fragment, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_fechas) {
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            Fechas fragment = new Fechas();
+            fragmentTransaction.replace(R.id.fragment, fragment);
+            fragmentTransaction.commit();
 
         }
 
@@ -117,6 +135,13 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction = fragmentManager.beginTransaction();
                 User_List fragment = new User_List();
                 fragmentTransaction.add(R.id.fragment, fragment);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                Localizacion fragmentL = new Localizacion();
+                fragmentTransaction.add(R.id.fragment, fragmentL);
                 fragmentTransaction.commit();
                 break;
         }
