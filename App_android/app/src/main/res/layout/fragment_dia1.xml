@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="(9:00 a 11:00)"
+        android:text="@string/_9_00_a_11_00"
         android:gravity="center"/>
 
     <android.support.v7.widget.CardView
@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vida Saludable"
+                    android:text="@string/vida_saludable"
                     android:textAllCaps="true"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14sp"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Llevar una vida saludable está estrechamente relacionado con una forma de vida que incluya la práctica habitual de actividad física acompañada de una alimentación saludable. "
+                    android:text="@string/llevar_una_vida_saludable_est_estrechamente_relacionado_con_una_forma_de_vida_que_incluya_la_pr_ctica_habitual_de_actividad_f_sica_acompa_ada_de_una_alimentaci_n_saludable"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14dp"
                     android:textStyle="italic" />
@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="(11:30 a 13:30)"
+        android:text="@string/_11_30_a_13_30"
         android:gravity="center"/>
 
     <android.support.v7.widget.CardView
@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="HIIT"
+                    android:text="@string/hiit"
                     android:textAllCaps="true"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14sp"
@@ -109,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:text="Entrenamiento de intervalos de alta intensidad – una técnica que se ha ganado a pulso su nombre como el método de entrenamiento más efectivo del mercado."
+                    android:text="@string/entrenamiento_de_intervalos_de_alta_intensidad_una_t_cnica_que_se_ha_ganado_a_pulso_su_nombre_como_el_m_todo_de_entrenamiento_m_s_efectivo_del_mercado"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14dp"
                     android:textStyle="italic" />
@@ -126,7 +126,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="(17:15 a 19:30)"
+        android:text="@string/_17_15_a_19_30"
         android:gravity="center"/>
 
     <android.support.v7.widget.CardView
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="74dp"
                     android:gravity="center"
-                    android:text="Entreno Oclusivo"
+                    android:text="@string/entreno_oclusivo"
                     android:textAllCaps="true"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14sp"
@@ -166,7 +166,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="El entrenamiento oclusivo o entrenamiento en oclusión es un método de entrenamiento no tan habitual pero que puede suponer una ventaja evidente de cara a la mejora de la composición corporal de ciertas personas"
+                    android:text="@string/el_entrenamiento_oclusivo_o_entrenamiento_en_oclusi_n_es_un_m_todo_de_entrenamiento_no_tan_habitual_pero_que_puede_suponer_una_ventaja_evidente_de_cara_a_la_mejora_de_la_composici_n_corporal_de_ciertas_personas"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14dp"
                     android:textStyle="italic" />

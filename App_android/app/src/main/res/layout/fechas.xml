@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Fecha de inscripcion"
+            android:text="@string/fecha_de_inscripcion"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold|italic"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="29/10/2018"
+            android:text="@string/_29_10_2018"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Fecha de presentación"
+            android:text="@string/fecha_de_presentaci_n"
             android:textSize="24sp"
             android:textStyle="bold|italic"
             android:padding="5dp"/>
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="19/01/2019/"
+            android:text="@string/_19_01_2019"
             android:textSize="18sp"
             android:textStyle="bold" />
         <ImageButton
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Fecha del congreso"
+            android:text="@string/fecha_del_congreso"
             android:textAllCaps="false"
             android:textSize="24sp"
             android:textStyle="bold|italic"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="20/01/2019/"
+            android:text="@string/_20_01_2019"
             android:textSize="18sp"
             android:textStyle="bold" />
 

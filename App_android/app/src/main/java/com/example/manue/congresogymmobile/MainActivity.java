@@ -46,13 +46,6 @@ public class MainActivity extends AppCompatActivity
             setFragment(1);
         }
 
-
-
-
-
-
-
-
     }
 
     @Override

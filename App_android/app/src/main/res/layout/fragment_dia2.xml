@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="(10:00 a 12:30)"
+        android:text="@string/_10_00_a_12_30"
         android:gravity="center"/>
 
     <android.support.v7.widget.CardView
@@ -36,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Descompensaciones musculares"
+                    android:text="@string/descompensaciones_musculares"
                     android:textAllCaps="true"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14sp"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Nikki nos hablara sobre las descompensaciones musculares, que por lo general no suelen ser un asunto muy importante, y por otro, nadie se escapa a ellas."
+                    android:text="@string/nikki_nos_hablara_sobre_las_descompensaciones_musculares_que_por_lo_general_no_suelen_ser_un_asunto_muy_importante_y_por_otro_nadie_se_escapa_a_ellas"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14dp"
                     android:textStyle="italic" />
@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="(16:00 a 18:00)"
+        android:text="@string/_16_00_a_18_00"
         android:gravity="center"/>
 
     <android.support.v7.widget.CardView
@@ -94,7 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Baños de hielo"
+                    android:text="@string/ba_os_de_hielo"
                     android:textAllCaps="true"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14sp"
@@ -110,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:text="Así visto, no parece una técnica muy apetecible. Sin embargo, sus defensores aseguran que esta práctica ayuda a que nuestros músculos, nervios, huesos y tendones se recuperen mejor después de realizar ejercicio físico intenso o exigente"
+                    android:text="@string/as_visto_no_parece_una_t_cnica_muy_apetecible_sin_embargo_sus_defensores_aseguran_que_esta_pr_ctica_ayuda_a_que_nuestros_m_sculos_nervios_huesos_y_tendones_se_recuperen_mejor_despu_s_de_realizar_ejercicio_f_sico_intenso_o_exigente"
                     android:textColor="@android:color/background_dark"
                     android:textSize="14dp"
                     android:textStyle="italic" />
