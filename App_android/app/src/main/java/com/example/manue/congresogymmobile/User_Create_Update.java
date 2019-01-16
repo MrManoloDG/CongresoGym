@@ -54,21 +54,7 @@ public class User_Create_Update extends android.support.v4.app.Fragment {
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(user != null){
-                    String user_id = user.getId();
-                    if(user_id != null){
-                        new EditarUserTask().execute();
-                    }
-                }else {
-                    new CreateUserTask().execute();
-                }
 
-            }
-        });
 
 
 
@@ -79,6 +65,47 @@ public class User_Create_Update extends android.support.v4.app.Fragment {
         txt_date_start = (EditText) view.findViewById(R.id.txt_date_start_view);
         txt_date_end = (EditText) view.findViewById(R.id.txt_date_end_view);
         txt_coment = (EditText) view.findViewById(R.id.txt_comment_view);
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(user != null){
+                    String user_id = user.getId();
+                    if(user_id != null){
+                        if(     !txt_name.getText().toString().isEmpty() &&
+                                !txt_plan.getText().toString().isEmpty() &&
+                                !txt_tel.getText().toString().isEmpty() &&
+                                !txt_email.getText().toString().isEmpty() &&
+                                !txt_date_end.getText().toString().isEmpty() &&
+                                !txt_coment.getText().toString().isEmpty()){
+                            new EditarUserTask().execute();
+                        }else {
+                            int duration = Toast.LENGTH_LONG;
+                            Toast toast = Toast.makeText(getContext(), "Campo vacío", duration);
+                            toast.show();
+                        }
+
+
+                    }
+                }else {
+                    if(     !txt_name.getText().toString().isEmpty() &&
+                            !txt_plan.getText().toString().isEmpty() &&
+                            !txt_tel.getText().toString().isEmpty() &&
+                            !txt_email.getText().toString().isEmpty() &&
+                            !txt_date_end.getText().toString().isEmpty() &&
+                            !txt_coment.getText().toString().isEmpty()){
+                        new CreateUserTask().execute();
+                    }else {
+                        int duration = Toast.LENGTH_LONG;
+                        Toast toast = Toast.makeText(getContext(), "Campo vacío", duration);
+                        toast.show();
+                    }
+
+                }
+
+            }
+        });
 
         try {
             Bundle bundle = this.getArguments();

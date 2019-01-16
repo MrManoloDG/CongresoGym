@@ -68,11 +68,6 @@ public class User_View extends Fragment {
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(User_View.this, User_Create_Update.class );
-                Bundle b = new Bundle();
-                b.putSerializable("persona",  user);
-                intent.putExtras(b);
-                startActivity(intent);*/
                 FragmentManager fragmentManager;
                 FragmentTransaction fragmentTransaction;
                 fragmentManager = ((FragmentActivity)getContext()).getSupportFragmentManager();
@@ -90,8 +85,6 @@ public class User_View extends Fragment {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Estas seguro?", Snackbar.LENGTH_LONG)
-                        //.setActionTextColor(Color.CYAN)
-                        //.setActionTextColor(getResources().getColor(R.color.snackbar_action))
                         .setAction("Borrar", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {

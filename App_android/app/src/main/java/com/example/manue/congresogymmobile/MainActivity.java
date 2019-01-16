@@ -37,15 +37,15 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Usado para notificaciones
         String menuFragment = getIntent().getStringExtra("menuFragment");
 
         if(menuFragment == null){
-            setFragment(0);
+            setFragment(0); // aqui se carga el fragmento de la lista
         }
         else{
-            setFragment(1);
+            setFragment(1); //carga fragmento de localización usado en notificaciones
         }
-
     }
 
     @Override
@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //Metodo que carga el fragmento al cargar la actividad
     public void setFragment(int position) {
         FragmentManager fragmentManager;
         FragmentTransaction fragmentTransaction;
